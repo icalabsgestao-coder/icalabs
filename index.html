@@ -3,43 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Icalabs</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Isis</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* Roxo — acento da Isadora */
-  --p9:#1A0A3A;--p8:#2D1560;--p7:#3D1F7A;--p6:#5A2D9E;--p5:#7B4DC0;--p4:#A07FD4;--p3:#C4ADEA;--p2:#DDD0F4;--p1:#F0EAFB;--p0:#FAF8FE;
-  /* Neutros quentes — base do design */
-  --n9:#1A1714;--n8:#2C2825;--n7:#3D3835;--n6:#5C5450;--n5:#8C837D;--n4:#B5AFA9;--n3:#D4CFC9;--n2:#E8E3DD;--n1:#F2EDE8;--n0:#FAF8F5;
+  /* Vinho — cor principal Isis */
+  --p9:#2A0810;--p8:#4A1020;--p7:#6B1A2E;--p6:#8B1E38;--p5:#A63050;--p4:#C4728A;--p3:#DBA8B5;--p2:#EDD0D8;--p1:#F7EAED;--p0:#FDF5F7;
+  /* Rosé / Mauve — tons secundários */
+  --r4:#C9969F;--r3:#DDB8BE;--r2:#EDD5D9;--r1:#F6ECEE;--r0:#FDF8F9;
+  /* Neutros quentes creme */
+  --n9:#1C1614;--n8:#2E2420;--n7:#42322D;--n6:#6B524C;--n5:#9C8078;--n4:#BFA8A2;--n3:#D8CECC;--n2:#EAE4E2;--n1:#F3EFED;--n0:#FAF8F7;
   /* Sistema */
-  --bg:#F5F1EC;--sur:#FFFFFF;--bd:#E2DBD3;--bdl:#EDE8E2;
-  --t1:#1A1714;--t2:#5C5450;--t3:#A09890;
-  --ok:#2D6A4F;--okb:#D4EDE3;--er:#9B2335;--erb:#F9E8EA;--wa:#7A4F00;--wab:#FEF3D8;
+  --bg:#F4EFEB;--sur:#FFFCFB;--bd:#E0D6D2;--bdl:#EDE7E4;
+  --t1:#1C1614;--t2:#6B524C;--t3:#A89090;
+  --ok:#2D5A3D;--okb:#D4EAD9;--er:#8B1E38;--erb:#F7EAED;--wa:#7A4A00;--wab:#FEF0D8;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Jost',sans-serif;font-size:13px;background:var(--bg);color:var(--t1);height:100vh;overflow:hidden;letter-spacing:.01em}
-button,input,select,textarea{font-family:'Jost',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;font-size:13px;background:var(--bg);color:var(--t1);height:100vh;overflow:hidden;letter-spacing:.01em}
+button,input,select,textarea{font-family:'Outfit',sans-serif}
 ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(--n3);border-radius:4px}
 #app{display:flex;flex-direction:column;height:100vh}
 .topbar{display:flex;align-items:center;gap:12px;padding:0 20px;height:54px;background:var(--sur);border-bottom:1px solid var(--bdl);flex-shrink:0;box-shadow:0 1px 0 var(--bdl)}
 .layout{display:flex;flex:1;overflow:hidden}
-.sidebar{width:190px;background:var(--sur);border-right:1px solid var(--bdl);padding:12px 8px 24px;display:flex;flex-direction:column;gap:1px;flex-shrink:0;overflow-y:auto}
+.sidebar{width:190px;background:var(--r0);border-right:1px solid var(--bdl);padding:12px 8px 24px;display:flex;flex-direction:column;gap:1px;flex-shrink:0;overflow-y:auto}
 .main{flex:1;overflow-y:auto;padding:24px 26px;background:var(--bg)}
 /* Logo */
 .logo{display:flex;align-items:center;gap:10px}
 .logo-mark{width:30px;height:30px;flex-shrink:0}
-.logo-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--n8);letter-spacing:.04em}
-.logo-accent{color:var(--p5)}
+.logo-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;color:var(--n8);letter-spacing:.04em}
+
 /* Nav */
-.nsec{font-size:9px;font-weight:600;color:var(--t3);letter-spacing:.14em;text-transform:uppercase;padding:14px 11px 5px}
+.nsec{font-size:8.5px;font-weight:600;color:var(--r4);letter-spacing:.16em;text-transform:uppercase;padding:14px 11px 5px}
 .nbtn{display:flex;align-items:center;gap:9px;width:100%;padding:8px 11px;border-radius:6px;border:none;background:none;color:var(--t2);font-size:12px;font-weight:400;cursor:pointer;text-align:left;transition:all .15s;letter-spacing:.02em}
 .nbtn:hover{background:var(--n1);color:var(--n8)}
-.nbtn.active{background:var(--p1);color:var(--p6);font-weight:500;border-left:2px solid var(--p5)}
+.nbtn.active{background:var(--r1);color:var(--p6);font-weight:500;border-left:2px solid var(--p6)}
 .nicon{width:16px;text-align:center;font-size:12px;flex-shrink:0}
 /* Sem selector */
 .swrap{margin-left:auto;position:relative;display:flex;gap:5px;align-items:center}
 .spill{display:flex;align-items:center;gap:6px;background:var(--n1);border:1px solid var(--n3);border-radius:4px;padding:5px 12px 5px 10px;color:var(--n7);font-size:11px;font-weight:500;cursor:pointer;transition:all .15s;letter-spacing:.03em}
-.spill:hover{background:var(--p1);border-color:var(--p3);color:var(--p6)}
+.spill:hover{background:var(--r1);border-color:var(--r3);color:var(--p6)}
 .scfg{background:none;border:none;color:var(--t3);font-size:14px;padding:4px 7px;border-radius:4px;cursor:pointer;transition:all .15s}
 .scfg:hover{background:var(--n1);color:var(--n7)}
 .sdd{position:absolute;right:0;top:calc(100% + 6px);background:var(--sur);border:1px solid var(--bd);border-radius:8px;z-index:60;min-width:210px;overflow:hidden;box-shadow:0 8px 32px rgba(26,23,20,.10)}
@@ -48,17 +51,17 @@ button,input,select,textarea{font-family:'Jost',sans-serif}
 .sitem.on{font-weight:500}
 /* Cards */
 .card{background:var(--sur);border:1px solid var(--bdl);border-radius:8px;padding:14px 16px;margin-bottom:8px;box-shadow:0 1px 3px rgba(26,23,20,.04)}
-.stitle{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;margin-bottom:14px;color:var(--n8);letter-spacing:.02em}
+.stitle{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;margin-bottom:14px;color:var(--n8);letter-spacing:.02em}
 /* Inputs */
-.inp{background:var(--n0);border:1px solid var(--n3);border-radius:5px;padding:7px 11px;color:var(--t1);width:100%;font-size:12.5px;outline:none;transition:border-color .15s;font-family:'Jost',sans-serif;letter-spacing:.02em}
-.inp:focus{border-color:var(--p4);background:#fff;box-shadow:0 0 0 3px var(--p1)}
+.inp{background:var(--n0);border:1px solid var(--n3);border-radius:5px;padding:7px 11px;color:var(--t1);width:100%;font-size:12.5px;outline:none;transition:border-color .15s;font-family:'Outfit',sans-serif;letter-spacing:.02em}
+.inp:focus{border-color:var(--p4);background:#fff;box-shadow:0 0 0 3px var(--r1)}
 .lbl{font-size:9.5px;color:var(--t3);margin-bottom:3px;display:block;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
 .fld{margin-bottom:10px}
 .row{display:flex;gap:8px}
 .fh{flex:1;margin-bottom:10px}
 textarea.inp{resize:vertical;min-height:68px;line-height:1.6}
 /* Buttons */
-.btn{border-radius:4px;padding:7px 14px;font-weight:500;font-size:12px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;border:none;transition:all .15s;letter-spacing:.04em;font-family:'Jost',sans-serif}
+.btn{border-radius:4px;padding:7px 14px;font-weight:500;font-size:12px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;border:none;transition:all .15s;letter-spacing:.04em;font-family:'Outfit',sans-serif}
 .btn-p{background:var(--p6);color:#fff;box-shadow:0 2px 8px rgba(90,45,158,.25)}
 .btn-p:hover{background:var(--p7);box-shadow:0 3px 12px rgba(90,45,158,.35)}
 .btn-o{background:var(--sur);color:var(--t1);border:1px solid var(--n3)}
@@ -71,14 +74,14 @@ textarea.inp{resize:vertical;min-height:68px;line-height:1.6}
 .sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
 .stat{background:var(--sur);border-radius:6px;padding:12px 14px;border:1px solid var(--bdl);box-shadow:0 1px 3px rgba(26,23,20,.04)}
 .slbl{font-size:9px;font-weight:600;color:var(--t3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
-.sval{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;color:var(--p6);line-height:1}
+.sval{font-family:'Playfair Display',serif;font-size:26px;font-weight:500;color:var(--p6);line-height:1}
 /* Alerts */
 .abox{background:var(--wab);border:1px solid #EFC76A;border-left:3px solid var(--wa);border-radius:4px;padding:9px 13px;margin-bottom:12px;font-size:12px;color:var(--wa);letter-spacing:.02em}
 /* Modal */
 .overlay{position:fixed;inset:0;background:rgba(26,23,20,.45);z-index:100;display:flex;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(4px)}
 .modal{background:var(--sur);border-radius:10px;width:100%;max-width:465px;max-height:90vh;overflow-y:auto;padding:24px;border:1px solid var(--bdl);box-shadow:0 20px 60px rgba(26,23,20,.15)}
 .mhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--bdl)}
-.mtitle{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--n8);letter-spacing:.02em}
+.mtitle{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;color:var(--n8);letter-spacing:.02em}
 /* Misc */
 .cdot{width:22px;height:22px;border-radius:50%;cursor:pointer;flex-shrink:0;transition:transform .12s}
 .cdot:hover{transform:scale(1.18)}
@@ -97,10 +100,10 @@ textarea.inp{resize:vertical;min-height:68px;line-height:1.6}
 .pill{display:inline-block;padding:2px 9px;border-radius:2px;font-size:10px;font-weight:500;letter-spacing:.04em}
 .empty{border:1px dashed var(--n3);border-radius:6px;padding:28px;text-align:center;color:var(--t3);font-size:13px;letter-spacing:.02em}
 /* Doc editor */
-.tbtn{background:none;border:1px solid transparent;border-radius:3px;padding:3px 8px;font-size:12px;color:var(--t2);cursor:pointer;transition:all .12s;min-width:26px;line-height:1.5;font-family:'Jost',sans-serif}
+.tbtn{background:none;border:1px solid transparent;border-radius:3px;padding:3px 8px;font-size:12px;color:var(--t2);cursor:pointer;transition:all .12s;min-width:26px;line-height:1.5;font-family:'Outfit',sans-serif}
 .tbtn:hover{background:var(--p0);border-color:var(--p2);color:var(--p6)}
-#doc-ce h1{font-size:24px;font-weight:400;color:var(--n8);margin:16px 0 8px;font-family:'Cormorant Garamond',serif;letter-spacing:.02em}
-#doc-ce h2{font-size:17px;font-weight:500;color:var(--p7);margin:13px 0 5px;font-family:'Cormorant Garamond',serif}
+#doc-ce h1{font-size:24px;font-weight:400;color:var(--n8);margin:16px 0 8px;font-family:'Playfair Display',serif;letter-spacing:.02em}
+#doc-ce h2{font-size:17px;font-weight:500;color:var(--p7);margin:13px 0 5px;font-family:'Playfair Display',serif}
 #doc-ce h3{font-size:14px;font-weight:500;color:var(--n6);margin:11px 0 4px}
 #doc-ce p{margin:0 0 8px;line-height:1.85}
 #doc-ce ul,#doc-ce ol{margin:5px 0 10px 20px;line-height:1.85}
@@ -108,6 +111,105 @@ textarea.inp{resize:vertical;min-height:68px;line-height:1.6}
 #doc-ce strong{color:var(--p7)}
 #doc-ce:focus{outline:none}
 #doc-ce:empty:before{content:attr(data-ph);color:var(--t3);pointer-events:none}
+
+/* ═══ ANIMATIONS ═══════════════════════════════════════════════════════════ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideRight{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:translateX(0)}}
+@keyframes countUp{from{opacity:0;transform:translateY(8px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes pulse{0%,100%{opacity:.04}50%{opacity:.07}}
+@keyframes barGrow{from{width:0}to{width:var(--bar-w,100%)}}
+
+/* Page enter */
+.main{animation:fadeIn .25s ease}
+
+/* Sidebar nav items stagger */
+.nbtn{animation:slideRight .2s ease both}
+.nbtn:nth-child(1){animation-delay:.03s}
+.nbtn:nth-child(2){animation-delay:.06s}
+.nbtn:nth-child(3){animation-delay:.09s}
+.nbtn:nth-child(4){animation-delay:.12s}
+.nbtn:nth-child(5){animation-delay:.15s}
+.nbtn:nth-child(6){animation-delay:.18s}
+.nbtn:nth-child(7){animation-delay:.21s}
+.nbtn:nth-child(8){animation-delay:.24s}
+
+/* Cards */
+.card{transition:box-shadow .2s ease, transform .2s ease, border-color .2s ease}
+.card:hover{box-shadow:0 6px 24px rgba(139,30,56,.10);transform:translateY(-2px);border-color:var(--r3)}
+
+/* Hero text decoration pulse */
+.hero-bg-text{animation:pulse 4s ease-in-out infinite}
+
+/* Stat blocks */
+.hero-stat{transition:transform .18s ease, opacity .18s ease}
+.hero-stat:hover{transform:translateY(-3px)}
+
+/* Nav active indicator */
+.nbtn.active::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:2px;height:60%;background:var(--p6);border-radius:0 2px 2px 0;transition:height .2s ease}
+.nbtn{position:relative}
+
+/* Buttons */
+.btn-p{transition:all .18s ease}
+.btn-p:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(139,30,56,.30)}
+.btn-p:active{transform:translateY(0)}
+.btn-o{transition:all .18s ease}
+.btn-o:hover{transform:translateY(-1px)}
+
+/* Section fade-up on render */
+.s-enter{animation:fadeUp .3s ease both}
+.s-enter:nth-child(1){animation-delay:.05s}
+.s-enter:nth-child(2){animation-delay:.10s}
+.s-enter:nth-child(3){animation-delay:.15s}
+.s-enter:nth-child(4){animation-delay:.20s}
+.s-enter:nth-child(5){animation-delay:.25s}
+
+/* Flash cards hover */
+.flash{transition:all .18s ease}
+.flash:hover{border-left-width:4px;box-shadow:0 3px 12px rgba(139,30,56,.08)}
+
+/* Table rows */
+.wktbl tbody tr{transition:background .15s ease}
+.wktbl tbody tr:hover td{background:var(--p0)}
+
+/* Input focus glow */
+.inp{transition:border-color .18s ease, box-shadow .18s ease, background .18s ease}
+
+/* Modal enter */
+.modal{animation:fadeUp .22s ease}
+
+/* Pill hover */
+.pill{transition:all .15s ease}
+
+/* Stat counter shimmer on hover */
+.hero-stat-num{transition:color .2s ease}
+.hero-stat:hover .hero-stat-num{color:var(--r2)}
+
+/* Topbar subtle shadow on scroll */
+.topbar{transition:box-shadow .2s ease}
+
+/* Scrollbar refined */
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--r3);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--p4)}
+
+/* Responsive */
+@media(max-width:640px){
+  .sidebar{width:52px;overflow:hidden}
+  .sidebar .nsec,.sidebar .logo-name,.nbtn span{display:none}
+  .nbtn{justify-content:center;padding:10px}
+  .nicon{width:auto;font-size:16px}
+  .main{padding:16px 14px}
+}
+
+/* ═══ DRAG AND DROP ══════════════════════════════════════════════════════════ */
+.doc-card[draggable="true"]{cursor:grab}
+.doc-card[draggable="true"]:active{cursor:grabbing}
+.doc-card.dragging{opacity:.4;transform:scale(.97)!important;box-shadow:none!important}
+.drop-zone{min-height:72px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.drop-zone.drag-over{border-color:var(--p5)!important;background:var(--p0)!important;transform:scale(1.04)!important;box-shadow:0 4px 16px rgba(139,30,56,.15)}
 </style>
 </head>
 <body>
@@ -115,19 +217,19 @@ textarea.inp{resize:vertical;min-height:68px;line-height:1.6}
   <div class="topbar">
     <div class="logo">
       <svg class="logo-mark" viewBox="0 0 30 30" fill="none">
-        <rect x="2" y="2" width="26" height="26" rx="6" fill="#F0EAF8"/>
-        <rect x="2" y="2" width="26" height="26" rx="6" stroke="#C4ADEA" stroke-width="1"/>
-        <path d="M9 21 L9 10 Q9 8 11 8 L19 8 Q22 8 22 11 L22 13 Q22 15 19 15 L11 15" stroke="#5A2D9E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <path d="M9 15 L20 15" stroke="#A07FD4" stroke-width="1" stroke-linecap="round"/>
-        <path d="M9 18 L17 18" stroke="#A07FD4" stroke-width="1" stroke-linecap="round"/>
-        <path d="M9 21 L15 21" stroke="#C4ADEA" stroke-width="1" stroke-linecap="round"/>
+        <rect x="2" y="2" width="26" height="26" rx="7" fill="#F7EAED"/>
+        <rect x="2" y="2" width="26" height="26" rx="7" stroke="#DBA8B5" stroke-width="1"/>
+        <path d="M15 7 C10 7 7 10 7 14 C7 18 10 21 14 22 C14.5 22.1 15 23 15 23 C15 23 15.5 22.1 16 22 C20 21 23 18 23 14 C23 10 20 7 15 7Z" fill="#A63050" opacity=".15"/>
+        <path d="M15 9 C11.5 9 9 11.5 9 15 C9 18.5 11.5 21 15 21 C18.5 21 21 18.5 21 15 C21 11.5 18.5 9 15 9Z" stroke="#8B1E38" stroke-width="1.2" fill="none"/>
+        <path d="M12 12.5 L15 19.5 L18 12.5" stroke="#8B1E38" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M12.8 16.5 L17.2 16.5" stroke="#C4728A" stroke-width="1" stroke-linecap="round"/>
       </svg>
-      <span class="logo-name">Ica<span class="logo-accent">labs</span></span>
+      <span class="logo-name">Isis</span>
     </div>
     <!-- Export / Import -->
     <div style="display:flex;gap:4px;align-items:center;margin-left:10px">
-      <button onclick="exportData()" title="Exportar backup dos seus dados" style="display:flex;align-items:center;gap:4px;background:none;border:1px solid var(--n3);border-radius:4px;padding:4px 10px;font-size:11px;font-weight:500;color:var(--n5);cursor:pointer;font-family:'Jost',sans-serif;letter-spacing:.03em;transition:all .15s" onmouseover="this.style.background='var(--n1)';this.style.color='var(--n7)'" onmouseout="this.style.background='none';this.style.color='var(--n5)'">↓ Exportar</button>
-      <button onclick="importData()" title="Importar backup salvo anteriormente" style="display:flex;align-items:center;gap:4px;background:none;border:1px solid transparent;border-radius:4px;padding:4px 10px;font-size:11px;font-weight:500;color:var(--n5);cursor:pointer;font-family:'Jost',sans-serif;letter-spacing:.03em;transition:all .15s" onmouseover="this.style.background='var(--n1)';this.style.color='var(--n7)'" onmouseout="this.style.background='none';this.style.color='var(--n5)'">↑ Importar</button>
+      <button onclick="exportData()" title="Exportar backup dos seus dados" style="display:flex;align-items:center;gap:4px;background:none;border:1px solid var(--n3);border-radius:4px;padding:4px 10px;font-size:11px;font-weight:500;color:var(--n5);cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:.03em;transition:all .15s" onmouseover="this.style.background='var(--n1)';this.style.color='var(--n7)'" onmouseout="this.style.background='none';this.style.color='var(--n5)'">↓ Exportar</button>
+      <button onclick="importData()" title="Importar backup salvo anteriormente" style="display:flex;align-items:center;gap:4px;background:none;border:1px solid transparent;border-radius:4px;padding:4px 10px;font-size:11px;font-weight:500;color:var(--n5);cursor:pointer;font-family:'Outfit',sans-serif;letter-spacing:.03em;transition:all .15s" onmouseover="this.style.background='var(--n1)';this.style.color='var(--n7)'" onmouseout="this.style.background='none';this.style.color='var(--n5)'">↑ Importar</button>
     </div>
     <div class="swrap" id="swrap">
       <button class="scfg" onclick="openSemCfg()" title="Configurar">⚙</button>
@@ -150,7 +252,7 @@ textarea.inp{resize:vertical;min-height:68px;line-height:1.6}
 
 <script>
 // ── constants ─────────────────────────────────────────────────────────────────
-const SCOLS=['#6030A8','#276A47','#9A6238','#B83232','#0E6B9A','#A85F00','#A83275','#3A6E6E'];
+const SCOLS=['#8B1E38','#A63050','#C4728A','#6B3A2A','#9A4A1E','#2D5A3D','#1A4A6B','#5A3A6B'];
 const DAYS=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
 const TODAY=new Date().toISOString().slice(0,10);
 const uid=()=>Math.random().toString(36).slice(2,9);
@@ -162,7 +264,7 @@ const esc=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>
 const SK='acad_v11';
 function lsLoad(){try{return JSON.parse(localStorage.getItem(SK));}catch{return null;}}
 function lsSave(){try{localStorage.setItem(SK,JSON.stringify({sems:A.sems,activeId:A.activeId}));}catch{}}
-const mkSem=n=>({id:uid(),name:n||'1º Semestre 2026',startDate:'2026-02-01',endDate:'2026-06-30',passingGrade:6,subjects:[],assignments:[],exams:[],holidays:[],attendance:{},gradeConfigs:{},gradeValues:{},docs:[],pages:[]});
+const mkSem=n=>({id:uid(),name:n||'1º Semestre 2026',startDate:'2026-02-01',endDate:'2026-06-30',passingGrade:6,subjects:[],assignments:[],exams:[],holidays:[],attendance:{},gradeConfigs:{},gradeValues:{},docs:[],pages:[],cancellations:{}});
 const stored=lsLoad();
 const A={sems:stored?.sems||[mkSem()],activeId:stored?.activeId||null,tab:'dashboard'};
 function sem(){return(A.activeId&&A.sems.find(s=>s.id===A.activeId))||A.sems[0];}
@@ -173,6 +275,20 @@ function render(){rSidebar();rMain();document.getElementById('slbl').textContent
 function dBetween(s,e,dow){if(!s||!e)return[];const r=[],c=new Date(s+'T12:00'),ee=new Date(e+'T12:00');while(c.getDay()!==dow)c.setDate(c.getDate()+1);while(c<=ee){r.push(c.toISOString().slice(0,10));c.setDate(c.getDate()+7);}return r;}
 function subDates(sub,sm){const seen=new Set(),all=[];for(const sl of(sub.schedule||[])){for(const d of dBetween(sm.startDate,sm.endDate,sl.day)){if(!seen.has(d)&&!(sm.holidays||[]).includes(d)){seen.add(d);all.push(d);}}}return all.sort();}
 function absStats(sub,sm){const dates=subDates(sub,sm),att=(sm.attendance||{})[sub.id]||{};const total=dates.length,max=Math.floor(total*.25),used=dates.filter(d=>att[d]).length;return{total,max,used,rem:max-used,dates};}
+function absStatsV2(sub,sm){
+  const allScheduled=subDates(sub,sm);
+  const subCancels=(sm.cancellations||{})[sub.id]||[];
+  const realDates=allScheduled.filter(d=>!subCancels.includes(d));
+  const realTotal=realDates.length;
+  const max=Math.floor(realTotal*.25);
+  const att=(sm.attendance||{})[sub.id]||{};
+  const used=realDates.filter(d=>att[d]).length;
+  const holidayCount=allScheduled.filter(d=>(sm.holidays||[]).includes(d)).length;
+  const cancelCount=subCancels.filter(d=>allScheduled.includes(d)||d>=(sm.startDate||'')).length;
+  const allDates=[...new Set([...allScheduled,...subCancels.filter(d=>d>=(sm.startDate||''))])].sort();
+  return{realTotal,max,used,rem:max-used,allDates,holidayCount,cancelCount};
+}
+
 function gAvg(cfgs,vals){if(!cfgs?.length)return null;let n=0,d=0;for(const c of cfgs){const v=vals?.[c.id];if(v!==''&&v!=null&&!isNaN(+v)){n+=+v*c.weight;d+=c.weight;}}return d>0?+(n/d).toFixed(2):null;}
 function gNeeded(cfgs,vals,pass){if(!cfgs?.length)return null;let earn=0,tot=0,miss=0;for(const c of cfgs){tot+=c.weight;const v=vals?.[c.id];if(v!==''&&v!=null&&!isNaN(+v))earn+=+v*c.weight;else miss+=c.weight;}return miss?+Math.max(0,(pass*tot-earn)/miss).toFixed(2):null;}
 
@@ -193,7 +309,7 @@ function rSidebar(){
     '<div class="nsec">Menu</div>'+
     TABS.map(t=>`<button class="nbtn${A.tab===t.id?' active':''}" onclick="goTab('${t.id}')"><span class="nicon">${t.ic}</span>${t.label}</button>`).join('');
 }
-function goTab(t){A.tab=t;rSidebar();rMain();}
+function goTab(t){if(t!=='resumos')_folderOpen=null;if(t!=='faltas')window._absOpen=null;A.tab=t;rSidebar();rMain();}
 
 // ── semester dropdown ─────────────────────────────────────────────────────────
 function toggleDD(){
@@ -231,6 +347,20 @@ function saveSemCfg(){updSem(s=>({...s,name:document.getElementById('sc-n').valu
 function delSem(){if(A.sems.length<=1){alert('Precisa ter ao menos um espaço.');return;}A.sems=A.sems.filter(x=>x.id!==sem().id);A.activeId=A.sems[0].id;lsSave();closeModal();render();}
 
 // ── main dispatcher ───────────────────────────────────────────────────────────
+function animateCounters(){
+  document.querySelectorAll('.hero-stat-num').forEach(el=>{
+    const target=parseInt(el.textContent)||0;
+    if(target===0)return;
+    let current=0;
+    const step=Math.ceil(target/12);
+    const timer=setInterval(()=>{
+      current=Math.min(current+step,target);
+      el.textContent=current;
+      if(current>=target)clearInterval(timer);
+    },40);
+  });
+}
+
 function rMain(){
   const fn={dashboard:rDash,materias:rMaterias,atividades:rAtividades,provas:rProvas,horario:rHorario,faltas:rFaltas,notas:rNotas,resumos:rResumos,caderno:rCaderno};
   document.getElementById('main').innerHTML=(fn[A.tab]||rDash)();
@@ -252,75 +382,120 @@ function rDash(){
   const slots=[...slotSet].sort().map(x=>{const[st,et]=x.split('|');return{st,et};});
   const gCell=(day,st,et)=>(s.subjects||[]).find(sub=>sub.schedule?.some(sl=>sl.day===day&&sl.startTime===st&&sl.endTime===et));
   const hasGrid=s.subjects?.length&&slots.length;
+  const now=new Date();
+  const monthNames=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+  const dayNames=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
+  const dayName=dayNames[now.getDay()];
+  const monthName=monthNames[now.getMonth()];
+  const totalSubs=(s.subjects||[]).length;
+  const totalPend=(s.assignments||[]).filter(a=>!a.done).length;
+  const totalExams=(s.exams||[]).filter(e=>(e.date||'')>=TODAY).length;
   const gridHtml=hasGrid?`<div class="card" style="margin-bottom:13px">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-      <span style="font-size:13px;font-weight:700;color:var(--p8)">Grade da semana</span>
+      <span style="font-size:12px;font-weight:600;color:var(--t2);letter-spacing:.04em;text-transform:uppercase;font-size:10px">Grade da semana</span>
       <button class="btn btn-g btn-sm" onclick="goTab('horario')" style="color:var(--p5)">Ver completa →</button>
     </div>
     <div style="overflow-x:auto"><table class="wktbl">
       <thead><tr>
         <th style="text-align:left;color:var(--t3)">Horário</th>
-        ${days.map(d=>`<th style="color:${d===todayDow?'var(--p6)':'var(--t3)'};${d===todayDow?'background:var(--p0);border-radius:5px 5px 0 0':''}">${DAYS[d]}${d===todayDow?'<br><span style="font-size:9px;background:var(--p6);color:#fff;padding:1px 5px;border-radius:99px;font-weight:700">hoje</span>':''}</th>`).join('')}
+        ${days.map(d=>`<th style="color:${d===todayDow?'var(--p6)':'var(--t3)'};${d===todayDow?'background:var(--p0);border-radius:4px 4px 0 0':''}">${DAYS[d]}${d===todayDow?'<br><span style="font-size:9px;background:var(--p6);color:#fff;padding:1px 5px;border-radius:2px;font-weight:600">hoje</span>':''}</th>`).join('')}
       </tr></thead>
       <tbody>${slots.map(({st,et})=>`<tr>
         <td style="font-size:9.5px;color:var(--t3);white-space:nowrap;line-height:1.35">${st}<br>${et}</td>
-        ${days.map(d=>{const sub=gCell(d,st,et);const sl=sub?.schedule?.find(x=>x.day===d&&x.startTime===st);return`<td style="padding:3px;${d===todayDow?'background:var(--p0)':''}">
-          ${sub?`<div class="scell" style="background:${sub.color}14;border-left-color:${sub.color}"><div style="font-size:10.5px;font-weight:700;color:${sub.color};line-height:1.2">${esc(sub.name)}</div>${sl?.room?`<div style="font-size:9px;color:var(--t3)">${esc(sl.room)}</div>`:''}</div>`:''}</td>`;}).join('')}
+        ${days.map(d=>{const sub=gCell(d,st,et);return sub?`<td class="scell" style="border-color:${sub.color};background:${sub.color}14"><span style="font-size:11px;font-weight:500;color:${sub.color}">${esc(sub.name)}</span></td>`:`<td style="background:var(--n0)"></td>`;}).join('')}
       </tr>`).join('')}</tbody>
     </table></div>
-  </div>`:
-  `<div class="empty" style="margin-bottom:13px">Nenhum horário ainda. <button class="btn btn-g btn-sm" onclick="goTab('materias')" style="color:var(--p5)">Adicionar matérias →</button></div>`;
-  const dayStr=new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-  return`<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px">
-    <div>
-      <div style="font-size:11px;color:var(--t3);margin-bottom:2px;text-transform:capitalize">${dayStr}</div>
-      <h1 style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;color:var(--p8);line-height:1.1">${esc(s.name)}</h1>
-    </div>
-    <button class="btn btn-o btn-sm" onclick="openSemCfg()" style="margin-top:4px">✎ Editar</button>
-  </div>
-  <div class="sgrid">
-    <div class="stat"><div class="slbl">Matérias</div><div class="sval">${s.subjects?.length||0}</div></div>
-    <div class="stat"><div class="slbl">Pendentes</div><div class="sval" style="color:${(s.assignments||[]).filter(a=>!a.done).length?'var(--n6)':'var(--p5)'}">${(s.assignments||[]).filter(a=>!a.done).length}</div></div>
-    <div class="stat"><div class="slbl">Próx. provas</div><div class="sval">${upExams.length}</div></div>
-    <div class="stat"><div class="slbl">Feriados</div><div class="sval" style="color:var(--n5)">${(s.holidays||[]).length}</div></div>
-  </div>
-  ${alerts.length?`<div class="abox">⚠ Atenção às faltas: ${alerts.map(x=>esc(x.name)).join(', ')}</div>`:''}
-  ${gridHtml}
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-    <div>
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px">
-        <span style="font-size:13px;font-weight:700;color:var(--p8)">Trabalhos pendentes</span>
-        <button class="btn btn-g btn-sm" onclick="goTab('atividades')" style="color:var(--p5)">Ver →</button>
+  </div>`:'';
+
+  return`
+  <!-- HERO EDITORIAL -->
+  <div style="position:relative;margin:-24px -26px 0;padding:52px 40px 44px;background:linear-gradient(135deg,var(--p8) 0%,var(--p6) 60%,var(--p5) 100%);overflow:hidden;min-height:220px">
+    <!-- Círculo decorativo -->
+    <div style="position:absolute;top:-60px;right:-60px;width:260px;height:260px;border-radius:50%;border:1px solid #fff;opacity:.06;pointer-events:none"></div>
+    <div style="position:absolute;top:-30px;right:-30px;width:180px;height:180px;border-radius:50%;border:1px solid #fff;opacity:.08;pointer-events:none"></div>
+    <!-- Tipografia decorativa de fundo -->
+    <div class="hero-bg-text" style="position:absolute;bottom:-30px;right:-10px;font-family:'Playfair Display',serif;font-size:150px;font-weight:700;color:#fff;opacity:.04;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.02em">isis</div>
+    <!-- Data -->
+    <div style="position:absolute;top:14px;right:40px;font-family:'Outfit',sans-serif;font-size:10px;font-weight:400;color:#fff;opacity:.45;letter-spacing:.18em;text-transform:uppercase;animation:fadeIn .4s ease">${dayName}, ${now.getDate()} de ${monthName}</div>
+    <!-- Conteúdo hero -->
+    <div style="position:relative;z-index:2">
+      <div style="font-family:'Outfit',sans-serif;font-size:11px;font-weight:300;color:var(--r2);margin-bottom:8px;letter-spacing:.12em;text-transform:uppercase;animation:fadeUp .3s ease .1s both">${s.name||'1º Semestre 2026'}</div>
+      <div style="font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:#fff;line-height:1.05;margin-bottom:28px;animation:fadeUp .35s ease .15s both">Bom dia,<br><em style="font-weight:400;opacity:.85">Isadora.</em></div>
+      <!-- Stats inline -->
+      <div style="display:flex;gap:28px;flex-wrap:wrap;animation:fadeUp .4s ease .2s both">
+        <div class="hero-stat" onclick="goTab('materias')" style="cursor:pointer">
+          <div class="hero-stat-num" style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#fff;line-height:1">${totalSubs}</div>
+          <div style="font-size:9px;color:var(--r2);letter-spacing:.14em;text-transform:uppercase;margin-top:3px">Matérias</div>
+        </div>
+        <div style="width:1px;background:#fff;opacity:.12;align-self:stretch;margin:4px 0"></div>
+        <div class="hero-stat" onclick="goTab('atividades')" style="cursor:pointer">
+          <div class="hero-stat-num" style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#fff;line-height:1">${totalPend}</div>
+          <div style="font-size:9px;color:var(--r2);letter-spacing:.14em;text-transform:uppercase;margin-top:3px">Pendentes</div>
+        </div>
+        <div style="width:1px;background:#fff;opacity:.12;align-self:stretch;margin:4px 0"></div>
+        <div class="hero-stat" onclick="goTab('provas')" style="cursor:pointer">
+          <div class="hero-stat-num" style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#fff;line-height:1">${totalExams}</div>
+          <div style="font-size:9px;color:var(--r2);letter-spacing:.14em;text-transform:uppercase;margin-top:3px">Próx. provas</div>
+        </div>
       </div>
-      ${!pending.length?'<p style="font-size:12px;color:var(--t3)">Nenhum pendente 🎉</p>':pending.map(a=>{const sub=sm[a.subjectId];const over=a.deadline&&a.deadline<TODAY;const dl=a.deadline?Math.ceil((new Date(a.deadline)-new Date(TODAY))/86400000):null;return`<div class="card" style="padding:8px 11px;margin-bottom:5px;border-left:3px solid ${sub?.color||'var(--n3)'}">
-        <div style="font-size:12px;font-weight:500">${esc(a.title)}</div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:3px">
-          <span style="font-size:10.5px;color:var(--t3)">${esc(sub?.name||'—')}</span>
-          ${a.deadline?`<span class="pill" style="background:${over?'var(--erb)':dl<=3?'var(--wab)':'var(--n0)'};color:${over?'var(--er)':dl<=3?'var(--wa)':'var(--t3)'}">${over?'atrasado':dl===0?'hoje':dl===1?'amanhã':'em '+dl+'d'}</span>`:''}
-        </div></div>`;}).join('')}
     </div>
-    <div>
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px">
-        <span style="font-size:13px;font-weight:700;color:var(--p8)">Próximas provas</span>
-        <button class="btn btn-g btn-sm" onclick="goTab('provas')" style="color:var(--p5)">Ver →</button>
+  </div>
+
+  <!-- ALERTAS -->
+  ${alerts.length?`<div style="margin:16px 0 0">
+    ${alerts.map(sub=>{const st=absStats(sub,s);return`<div class="abox">⚠️ <strong>${esc(sub.name)}</strong> — ${st.rem} falta${st.rem!==1?'s':''} restante${st.rem!==1?'s':''}</div>`;}).join('')}
+  </div>`:''}
+
+  <!-- GRADE + CONTEÚDO -->
+  <div style="margin-top:20px;animation:fadeUp .4s ease .25s both">
+    ${gridHtml}
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <!-- Trabalhos pendentes -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <span style="font-size:10px;font-weight:600;color:var(--t3);letter-spacing:.1em;text-transform:uppercase">Pendentes</span>
+          <button class="btn btn-g btn-sm" onclick="goTab('atividades')" style="color:var(--p5)">Ver →</button>
+        </div>
+        ${pending.length?pending.map(a=>{const sub=sm[a.subjectId];const overdue=a.deadline&&a.deadline<TODAY;
+        return`<div style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;border-bottom:1px solid var(--bdl)">
+          <div style="width:3px;height:36px;border-radius:2px;background:${sub?.color||'var(--p4)'};flex-shrink:0;margin-top:2px"></div>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:12.5px;font-weight:500;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(a.title)}</div>
+            ${a.deadline?`<div style="font-size:10.5px;color:${overdue?'var(--er)':'var(--t3)'};margin-top:1px">${overdue?'⚠ ':''} ${fmtF(a.deadline)}</div>`:''}
+          </div>
+        </div>`;}).join(''):`<div style="font-size:12px;color:var(--t3);padding:16px 0;text-align:center">Nenhum pendente 🎉</div>`}
       </div>
-      ${!upExams.length?'<p style="font-size:12px;color:var(--t3)">Nenhuma próxima</p>':upExams.map(e=>{const sub=sm[e.subjectId];const dl=e.date?Math.ceil((new Date(e.date)-new Date(TODAY))/86400000):null;return`<div class="card" style="padding:8px 11px;margin-bottom:5px;border-left:3px solid ${sub?.color||'var(--n3)'}">
-        <div style="font-size:12px;font-weight:500">${esc(e.title)}</div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:3px">
-          <span style="font-size:10.5px;color:var(--t3)">${esc(sub?.name||'—')}</span>
-          ${e.date?`<span class="pill" style="background:${dl<=3?'var(--wab)':'var(--p0)'};color:${dl<=3?'var(--wa)':'var(--p5)'}">${dl===0?'hoje':dl===1?'amanhã':fmtF(e.date)}</span>`:''}
-        </div></div>`;}).join('')}
+      <!-- Próximas provas -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <span style="font-size:10px;font-weight:600;color:var(--t3);letter-spacing:.1em;text-transform:uppercase">Próx. provas</span>
+          <button class="btn btn-g btn-sm" onclick="goTab('provas')" style="color:var(--p5)">Ver →</button>
+        </div>
+        ${upExams.length?upExams.map(e=>{const sub=sm[e.subjectId];
+        return`<div style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;border-bottom:1px solid var(--bdl)">
+          <div style="width:3px;height:36px;border-radius:2px;background:${sub?.color||'var(--p4)'};flex-shrink:0;margin-top:2px"></div>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:12.5px;font-weight:500;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(e.subject||sub?.name||'Prova')}</div>
+            ${e.date?`<div style="font-size:10.5px;color:var(--t3);margin-top:1px">${fmtF(e.date)}</div>`:''}
+          </div>
+        </div>`;}).join(''):`<div style="font-size:12px;color:var(--t3);padding:16px 0;text-align:center">Nenhuma próxima 📅</div>`}
+      </div>
     </div>
   </div>`;
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
-// MATÉRIAS
-// ═══════════════════════════════════════════════════════════════════════════════
 function rMaterias(){
   const s=sem();
-  return`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px">
-    <h2 class="stitle" style="margin:0">Matérias</h2>
+  return`  <div style="position:relative;margin:-24px -26px 24px;padding:32px 40px 28px;background:linear-gradient(135deg,var(--p8) 0%,var(--p6) 60%,var(--p5) 100%);overflow:hidden">
+    <div style="position:absolute;bottom:-20px;right:-10px;font-family:'Playfair Display',serif;font-size:100px;font-weight:700;color:#fff;opacity:.04;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.02em">matérias</div>
+    <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;border:1px solid #fff;opacity:.07;pointer-events:none"></div>
+    <div style="position:relative;z-index:2;animation:fadeUp .3s ease both">
+      <div style="font-family:'Outfit',sans-serif;font-size:9px;font-weight:400;color:var(--r2);letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px;opacity:.7">Suas disciplinas</div>
+      <div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#fff;line-height:1.1">Matérias</div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:flex-end;align-items:center;margin-bottom:15px">
+    <span></span>
     <button class="btn btn-p" onclick="openSubjM()">+ Adicionar</button>
   </div>
   ${!s.subjects?.length?`<div class="empty">Nenhuma matéria ainda. Clique em "+ Adicionar".</div>`:
@@ -343,7 +518,7 @@ function openSubjM(id){
   <div class="fld"><label class="lbl">Nome</label><input class="inp" id="sm-n" value="${esc(sub?.name||'')}" placeholder="Ex: Cálculo I"/></div>
   <div class="fld"><label class="lbl">Professor(a)</label><input class="inp" id="sm-p" value="${esc(sub?.professor||'')}" placeholder="Opcional"/></div>
   <div class="fld"><label class="lbl">Cor</label>
-    <div id="sm-cols" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:2px">${SCOLS.map(c=>`<div class="cdot" style="background:${c};outline:${(sub?.color||SCOLS[0])===c?'2.5px solid var(--p8)':'none'};outline-offset:2px" onclick="pickCol('${c}')"></div>`).join('')}</div>
+    <div id="sm-cols" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:2px">${SCOLS.map(c=>`<div class="cdot" style="background:${c};outline:${(sub?.color||SCOLS[0])===c?'2.5px solid var(--p6)':'none'};outline-offset:2px" onclick="pickCol('${c}')"></div>`).join('')}</div>
     <input type="hidden" id="sm-c" value="${esc(sub?.color||SCOLS[0])}"/></div>
   <div>
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><label class="lbl" style="margin:0">Horários</label><button class="btn btn-g btn-sm" style="color:var(--p5)" onclick="addSlot()">+ Slot</button></div>
@@ -364,7 +539,7 @@ function slotRow(sl,i){return`<div id="slot-${i}" style="display:flex;gap:4px;al
 </div>`;}
 function addSlot(){const w=document.getElementById('sm-slots'),i=w.querySelectorAll('[id^=slot-]').length,div=document.createElement('div');div.innerHTML=slotRow({day:1,startTime:'08:00',endTime:'10:00',room:''},i);w.appendChild(div.firstElementChild);}
 function rmSlot(i){const el=document.getElementById('slot-'+i);if(el&&document.querySelectorAll('[id^=slot-]').length>1)el.remove();}
-function pickCol(c){document.getElementById('sm-c').value=c;document.querySelectorAll('#sm-cols .cdot').forEach(d=>{d.style.outline=d.style.background===c?'2.5px solid var(--p8)':'none';});}
+function pickCol(c){document.getElementById('sm-c').value=c;document.querySelectorAll('#sm-cols .cdot').forEach(d=>{d.style.outline=d.style.background===c?'2.5px solid var(--p6)':'none';});}
 function saveSubj(id){
   const name=document.getElementById('sm-n').value.trim();if(!name)return;
   const color=document.getElementById('sm-c').value,prof=document.getElementById('sm-p').value;
@@ -384,8 +559,8 @@ function rAtividades(){
   if(_af==='done')items=items.filter(a=>a.done);
   items=items.sort((a,b)=>(a.deadline||'zzz').localeCompare(b.deadline||'zzz'));
   const sm=Object.fromEntries((s.subjects||[]).map(x=>[x.id,x]));
-  return`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:11px">
-    <h2 class="stitle" style="margin:0">Trabalhos e atividades</h2>
+  return`<div style="position:relative;margin:-24px -26px 24px;padding:32px 40px 28px;background:linear-gradient(135deg,var(--p8) 0%,var(--p6) 60%,var(--p5) 100%);overflow:hidden"><div style="position:absolute;bottom:-20px;right:-10px;font-family:'Playfair Display',serif;font-size:100px;font-weight:700;color:#fff;opacity:.04;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.02em">trabalhos</div><div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;border:1px solid #fff;opacity:.07;pointer-events:none"></div><div style="position:relative;z-index:2;animation:fadeUp .3s ease both"><div style="font-family:'Outfit',sans-serif;font-size:9px;font-weight:400;color:var(--r2);letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px;opacity:.7">Atividades e entregas</div><div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#fff;line-height:1.1">Trabalhos</div></div></div><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:11px">
+    <h2 class="stitle" style="margin:0;display:none">Trabalhos e atividades</h2>
     <button class="btn btn-p" onclick="openAtvM()">+ Adicionar</button>
   </div>
   <div style="display:flex;gap:4px;margin-bottom:11px">
@@ -436,8 +611,8 @@ function saveAtv(id){
 // ═══════════════════════════════════════════════════════════════════════════════
 function rProvas(){
   const s=sem(),items=(s.exams||[]).sort((a,b)=>(a.date||'').localeCompare(b.date||'')),sm=Object.fromEntries((s.subjects||[]).map(x=>[x.id,x]));
-  return`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px">
-    <h2 class="stitle" style="margin:0">Provas</h2>
+  return`<div style="position:relative;margin:-24px -26px 24px;padding:32px 40px 28px;background:linear-gradient(135deg,var(--p8) 0%,var(--p6) 60%,var(--p5) 100%);overflow:hidden"><div style="position:absolute;bottom:-20px;right:-10px;font-family:'Playfair Display',serif;font-size:100px;font-weight:700;color:#fff;opacity:.04;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.02em">provas</div><div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;border:1px solid #fff;opacity:.07;pointer-events:none"></div><div style="position:relative;z-index:2;animation:fadeUp .3s ease both"><div style="font-family:'Outfit',sans-serif;font-size:9px;font-weight:400;color:var(--r2);letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px;opacity:.7">Calendário de avaliações</div><div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#fff;line-height:1.1">Provas</div></div></div><div style="display:flex;justify-content:flex-end;align-items:center;margin-bottom:15px">
+    <h2 class="stitle" style="margin:0" style="display:none">Provas</h2>
     <button class="btn btn-p" onclick="openProvaM()">+ Adicionar</button>
   </div>
   ${!items.length?`<div class="empty">Nenhuma prova cadastrada ainda.</div>`:
@@ -490,10 +665,10 @@ function rHorario(){
   if((s.subjects||[]).some(x=>x.schedule?.some(sl=>sl.day===6)))days.push(6);
   const slotSet=new Set();(s.subjects||[]).forEach(sub=>(sub.schedule||[]).forEach(sl=>slotSet.add(sl.startTime+'|'+sl.endTime)));
   const slots=[...slotSet].sort().map(x=>{const[st,et]=x.split('|');return{st,et};});
-  if(!s.subjects?.length||!slots.length)return`<h2 class="stitle">Grade de horários</h2><div class="empty">Cadastre matérias com horários para ver a grade aqui.</div>`;
+  if(!s.subjects?.length||!slots.length)return`<div style="position:relative;margin:-24px -26px 24px;padding:32px 40px 28px;background:linear-gradient(135deg,var(--p8) 0%,var(--p6) 60%,var(--p5) 100%);overflow:hidden"><div style="position:absolute;bottom:-20px;right:-10px;font-family:'Playfair Display',serif;font-size:100px;font-weight:700;color:#fff;opacity:.04;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.02em">horário</div><div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;border:1px solid #fff;opacity:.07;pointer-events:none"></div><div style="position:relative;z-index:2;animation:fadeUp .3s ease both"><div style="font-family:'Outfit',sans-serif;font-size:9px;font-weight:400;color:var(--r2);letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px;opacity:.7">Grade semanal</div><div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#fff;line-height:1.1">Horário</div></div></div><div class="empty">Cadastre matérias com horários para ver a grade aqui.</div>`;
   const tdow=new Date().getDay();
   const gCell=(day,st,et)=>(s.subjects||[]).find(sub=>sub.schedule?.some(sl=>sl.day===day&&sl.startTime===st&&sl.endTime===et));
-  return`<h2 class="stitle">Grade de horários — ${esc(s.name)}</h2>
+  return`<h2 class="stitle" style="display:none">Grade de horários — ${esc(s.name)}</h2>
   <div class="card" style="overflow-x:auto;padding:15px 17px">
     <table class="wktbl">
       <thead><tr>
@@ -515,45 +690,301 @@ function rHorario(){
 let _fe=null;
 function rFaltas(){
   const s=sem();
-  return`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:11px;flex-wrap:wrap;gap:6px">
-    <h2 class="stitle" style="margin:0">Controle de faltas</h2>
-    <div style="display:flex;gap:5px;align-items:center">
-      <input class="inp" type="date" id="fl-h" style="width:136px;padding:5px 8px;font-size:11px"/>
-      <button class="btn btn-o btn-sm" onclick="addHol()">+ Feriado</button>
+  const openSub=window._absOpen||null;
+  if(openSub) return rFaltasDetail(s, openSub);
+  return rFaltasList(s);
+}
+
+function rFaltasList(s){
+  const subjects=(s.subjects||[]).filter(sub=>sub.schedule?.length);
+  return`
+  <div style="position:relative;margin:-24px -26px 24px;padding:32px 40px 28px;background:linear-gradient(135deg,var(--p8) 0%,var(--p6) 60%,var(--p5) 100%);overflow:hidden">
+    <div style="position:absolute;bottom:-20px;right:-10px;font-family:'Playfair Display',serif;font-size:100px;font-weight:700;color:#fff;opacity:.04;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.02em">faltas</div>
+    <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;border:1px solid #fff;opacity:.07;pointer-events:none"></div>
+    <div style="position:relative;z-index:2;animation:fadeUp .3s ease both">
+      <div style="font-family:'Outfit',sans-serif;font-size:9px;color:var(--r2);letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px;opacity:.7">Controle de presença</div>
+      <div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#fff;line-height:1.1">Faltas</div>
     </div>
   </div>
-  ${(s.holidays||[]).length?`<div style="background:var(--n0);border:1px solid var(--n2);border-radius:8px;padding:7px 11px;margin-bottom:10px;font-size:11px;display:flex;flex-wrap:wrap;gap:7px;align-items:center">
-    <span style="color:var(--t3);font-weight:700">Feriados:</span>
-    ${s.holidays.sort().map(d=>`<span style="background:var(--n1);padding:1px 8px;border-radius:99px;color:var(--t2)">${fmtF(d)}<button onclick="rmHol('${d}')" style="background:none;border:none;color:var(--t3);cursor:pointer;font-size:10px;margin-left:3px">✕</button></span>`).join('')}
-  </div>`:''}
-  ${!s.subjects?.length?`<div class="empty">Cadastre matérias com horários para controlar as faltas.</div>`:
-  s.subjects.map(sub=>{
-    const st=absStats(sub,s),isE=_fe===sub.id,danger=st.rem<0,warn=!danger&&st.rem<=2&&st.total>0;
-    const bc=danger?'var(--er)':warn?'var(--wa)':'var(--ok)';
-    return`<div style="background:var(--sur);border:1px solid ${danger?'#f5c0c0':warn?'#fde68a':'var(--bdl)'};border-radius:10px;margin-bottom:7px;overflow:hidden">
-      <div onclick="togFE('${sub.id}')" style="display:flex;align-items:center;padding:11px 13px;cursor:pointer;gap:10px;border-left:4px solid ${sub.color}">
-        <div style="flex:1">
-          <div style="font-size:13px;font-weight:700;color:var(--p8)">${esc(sub.name)}</div>
-          <div style="font-size:11px;color:var(--t3);margin-top:1px">${st.total} aulas · máx ${st.max} faltas (25%)</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:9px">
-          <div class="abar"><div class="afill" style="width:${st.max?Math.min(100,st.used/st.max*100):0}%;background:${bc}"></div></div>
-          <span style="font-size:12px;font-weight:700;color:${bc};min-width:95px;text-align:right">${st.used}/${st.max} · ${Math.max(0,st.rem)} restam</span>
-        </div>
-        <span style="font-size:9px;color:var(--t3)">${isE?'▲':'▼'}</span>
+
+  <!-- CONFIG SEMESTRE -->
+  <div class="card" style="margin-bottom:14px;animation:fadeUp .3s ease .05s both">
+    <div style="font-size:10px;font-weight:600;color:var(--t3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">Período do semestre</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end">
+      <div class="fh" style="min-width:130px">
+        <label class="lbl">Início das aulas</label>
+        <input class="inp" type="date" id="sem-start" value="${s.startDate||''}"
+          onchange="updSem(s=>({...s,startDate:this.value}));rMain()"
+          style="font-size:12px;padding:6px 9px"/>
       </div>
-      ${isE?`<div style="padding:10px 13px 13px;border-top:1px solid var(--bdl)">
-        ${st.total===0?`<p style="font-size:12px;color:var(--t3)">Configure as datas do semestre (⚙) e os horários das matérias.</p>`:
-        `<p style="font-size:11px;color:var(--t3);margin-bottom:8px">Clique na data para alternar · <span style="color:var(--ok)">Verde</span> = presente · <span style="color:var(--er)">Vermelho</span> = falta</p>
-        <div style="display:flex;flex-wrap:wrap;gap:4px">
-          ${st.dates.map(d=>{const ab=(s.attendance||{})[sub.id]?.[d]||false,ip=d<=TODAY;
-          return`<button class="dchip" style="background:${ab?'var(--erb)':ip?'var(--okb)':'var(--n0)'};color:${ab?'var(--er)':ip?'var(--ok)':'var(--t3)'};border-color:${ab?'#f5c0c0':ip?'#a7e9c5':'var(--bdl)'};font-weight:${ab?700:400}" onclick="togAbs('${sub.id}','${d}')">${fmt(d)}${ab?' ✕':''}</button>`;}).join('')}
-        </div>`}</div>`:''}</div>`;
-  }).join('')}`;
+      <div class="fh" style="min-width:130px">
+        <label class="lbl">Fim das aulas</label>
+        <input class="inp" type="date" id="sem-end" value="${s.endDate||''}"
+          onchange="updSem(s=>({...s,endDate:this.value}));rMain()"
+          style="font-size:12px;padding:6px 9px"/>
+      </div>
+      <div style="margin-bottom:10px;display:flex;gap:6px;flex-wrap:wrap">
+        <button class="btn btn-o btn-sm" onclick="loadBrHolidays()">🇧🇷 Feriados nacionais 2026</button>
+        <button class="btn btn-o btn-sm" onclick="openHolModal()">+ Adicionar feriado</button>
+      </div>
+    </div>
+    ${(s.holidays||[]).length?`<div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:4px">
+      ${(s.holidays||[]).sort().map(d=>`<span style="background:var(--r1);color:var(--p6);border:1px solid var(--r2);padding:2px 8px;border-radius:3px;font-size:11px;display:flex;align-items:center;gap:4px">${fmtF(d)}<button onclick="rmHol('${d}')" style="background:none;border:none;color:var(--p4);cursor:pointer;font-size:11px;padding:0;line-height:1">×</button></span>`).join('')}
+    </div>`:``}
+  </div>
+
+  <!-- LISTA DE MATÉRIAS -->
+  ${!subjects.length?`<div class="empty" style="padding:40px;text-align:center">
+    <div style="font-size:28px;margin-bottom:8px">📋</div>
+    <div style="font-size:13px;color:var(--t3)">Cadastre matérias com horários para controlar faltas</div>
+  </div>`:
+  `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;animation:fadeUp .3s ease .1s both">
+    ${subjects.map(sub=>{
+      const st=absStatsV2(sub,s);
+      const pct=st.realTotal>0?Math.round((st.used/st.realTotal)*100):0;
+      const danger=st.rem<=1,warn=st.rem<=2&&st.rem>1;
+      const barColor=danger?'var(--er)':warn?'#E09000':'var(--ok)';
+      return`<div onclick="window._absOpen='${sub.id}';rMain()"
+        style="background:var(--sur);border:1px solid var(--bdl);border-top:3px solid ${sub.color};border-radius:8px;padding:14px;cursor:pointer;transition:all .18s ease"
+        onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(139,30,56,.10)'"
+        onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+          <div style="width:9px;height:9px;border-radius:50%;background:${sub.color};flex-shrink:0"></div>
+          <span style="font-size:13px;font-weight:600;color:var(--n8);flex:1">${esc(sub.name)}</span>
+          ${danger?`<span style="font-size:9px;background:var(--erb);color:var(--er);padding:2px 6px;border-radius:3px;font-weight:700">CRÍTICO</span>`:
+            warn?`<span style="font-size:9px;background:var(--wab);color:var(--wa);padding:2px 6px;border-radius:3px;font-weight:700">ATENÇÃO</span>`:''}
+        </div>
+        <div style="background:var(--n2);border-radius:2px;height:3px;margin-bottom:8px;overflow:hidden">
+          <div style="height:100%;border-radius:2px;background:${barColor};width:${Math.min(100,pct)}%;transition:width .4s ease"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:11px;color:var(--t2)">${st.used} falta${st.used!==1?'s':''} de ${st.max} permitida${st.max!==1?'s':''}</span>
+          <span style="font-size:11px;color:${danger?'var(--er)':warn?'var(--wa)':'var(--t3)'}">restam ${st.rem}</span>
+        </div>
+        <div style="font-size:10px;color:var(--t3);margin-top:5px">${st.realTotal} aulas · clique para ver detalhes →</div>
+      </div>`;
+    }).join('')}
+  </div>`}`;
 }
+
+function rFaltasDetail(s, subId){
+  const subjects=s.subjects||[];
+  const sub=subjects.find(x=>x.id===subId);
+  if(!sub) return rFaltasList(s);
+  const st=absStatsV2(sub,s);
+  const att=(s.attendance||{})[sub.id]||{};
+  const subCancels=(s.cancellations||{})[sub.id]||[];
+  const pct=st.realTotal>0?Math.round((st.used/st.realTotal)*100):0;
+  const danger=st.rem<=1,warn=st.rem<=2&&st.rem>1;
+  const barColor=danger?'var(--er)':warn?'#E09000':'var(--ok)';
+  const monthNames=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+  const monthNamesShort=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+
+  // Group dates by month
+  const byMonth={};
+  st.allDates.forEach(d=>{
+    const key=d.slice(0,7);
+    if(!byMonth[key]) byMonth[key]=[];
+    byMonth[key].push(d);
+  });
+
+  return`
+  <div style="position:relative;margin:-24px -26px 24px;padding:32px 40px 28px;background:linear-gradient(135deg,var(--p8) 0%,var(--p6) 60%,var(--p5) 100%);overflow:hidden">
+    <div style="position:absolute;bottom:-20px;right:-10px;font-family:'Playfair Display',serif;font-size:100px;font-weight:700;color:#fff;opacity:.04;line-height:1;pointer-events:none;user-select:none">${esc(sub.name.toLowerCase())}</div>
+    <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;border:1px solid #fff;opacity:.07;pointer-events:none"></div>
+    <div style="position:relative;z-index:2;animation:fadeUp .3s ease both;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px">
+      <div>
+        <button onclick="window._absOpen=null;rMain()" style="background:none;border:none;color:var(--r2);font-size:11px;letter-spacing:.08em;cursor:pointer;font-family:'Outfit',sans-serif;padding:0;margin-bottom:8px;opacity:.7">← Faltas</button>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:10px;height:10px;border-radius:50%;background:${sub.color};flex-shrink:0"></div>
+          <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#fff;line-height:1.1">${esc(sub.name)}</div>
+        </div>
+      </div>
+      <div style="padding-top:24px">
+        <button class="btn btn-o btn-sm" onclick="openCancelModal('${sub.id}')" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.25);color:#fff;font-size:11px">* Cancelar aula</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="card abs-card" style="margin-bottom:12px;${danger?'border-left:3px solid var(--er)':''}">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:10px">
+      <span class="abs-badge" style="font-size:12px;font-weight:600;color:${danger?'var(--er)':warn?'var(--wa)':'var(--ok)'};background:${danger?'var(--erb)':warn?'var(--wab)':'var(--okb)'};padding:4px 10px;border-radius:4px">
+        ${st.used} falta${st.used!==1?'s':''} · ${st.rem} restante${st.rem!==1?'s':''} de ${st.max} permitida${st.max!==1?'s':''}
+      </span>
+      <div style="font-size:10px;color:var(--t3);display:flex;gap:10px;flex-wrap:wrap">
+        <span>📅 ${st.realTotal} aulas reais</span>
+        ${st.holidayCount?`<span>🇧🇷 ${st.holidayCount} feriado${st.holidayCount!==1?'s':''}</span>`:''}
+        ${st.cancelCount?`<span>* ${st.cancelCount} cancelamento${st.cancelCount!==1?'s':''}</span>`:''}
+      </div>
+    </div>
+    <div style="background:var(--n2);border-radius:2px;height:4px;overflow:hidden">
+      <div class="abs-bar" style="height:100%;border-radius:2px;background:${barColor};width:${Math.min(100,pct)}%;transition:width .4s ease"></div>
+    </div>
+  </div>
+
+  <!-- CALENDÁRIO POR MÊS -->
+  <div style="animation:fadeUp .3s ease .1s both">
+    ${Object.keys(byMonth).sort().map(monthKey=>{
+      const [yr,mo]=monthKey.split('-');
+      const monthLabel=monthNames[parseInt(mo)-1]+' '+yr;
+      const days=byMonth[monthKey];
+      const cells=days.map(d=>{
+        const isAbs=att[d];
+        const isCancel=subCancels.includes(d);
+        const isHol=(s.holidays||[]).includes(d);
+        const isPast=d<=TODAY;
+        const isToday=d===TODAY;
+        let bg='var(--n1)',color='var(--t3)',border='transparent',label='';
+        if(isCancel){bg='var(--n2)';color='var(--n4)';label='*';}
+        else if(isHol){bg='var(--p1)';color='var(--p4)';}
+        else if(isAbs&&isPast){bg='var(--erb)';color='var(--er)';border='var(--er)';}
+        else if(!isAbs&&isPast&&!isToday){bg='var(--okb)';color='var(--ok)';}
+        else if(isToday){bg='var(--p6)';color='#fff';}
+        const dayNum=new Date(d+'T12:00').getDate();
+        return`<div onclick="toggleAbs('${sub.id}','${d}',${isCancel||isHol},this)"
+          title="${d}${isCancel?' (cancelado*)':isHol?' (feriado)':isAbs?' (falta)':isPast?' (presente)':''}"
+          style="width:34px;height:40px;border-radius:5px;background:${bg};color:${color};border:1px solid ${border};display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;cursor:${isCancel||isHol?'default':'pointer'};transition:all .15s;flex-direction:column;gap:1px;line-height:1;user-select:none"
+          onmouseover="if(this.style.cursor!=='default')this.style.transform='scale(1.1)'"
+          onmouseout="this.style.transform=''">
+          <span style="font-size:12px;font-weight:700">${dayNum}</span>
+          ${label?`<span style="font-size:7px;opacity:.6">${label}</span>`:''}
+        </div>`;
+      }).join('');
+      return`<div class="card" style="margin-bottom:10px">
+        <div style="font-size:10px;font-weight:700;color:var(--p6);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px">
+          <span>${monthLabel}</span>
+          <div style="flex:1;height:1px;background:var(--bdl)"></div>
+          <span style="color:var(--t3);font-weight:400">${days.length} aula${days.length!==1?'s':''}</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">${cells}</div>
+      </div>`;
+    }).join('')}
+  </div>`;
+}
+
+
 function togFE(id){_fe=_fe===id?null:id;rMain();}
+function openHolModal(){
+  const d=document.createElement('div');
+  d.className='overlay';d.onclick=e=>{if(e.target===d)d.remove();};
+  const m=document.createElement('div');m.className='modal';m.style.maxWidth='320px';m.onclick=e=>e.stopPropagation();
+  m.innerHTML=`<div class="mhead"><span class="mtitle">Adicionar feriado</span><button onclick="this.closest('.overlay').remove()" style="background:none;border:none;font-size:22px;cursor:pointer;color:var(--t3)">×</button></div>
+    <label class="lbl">Data</label>
+    <input class="inp" type="date" id="fl-h" style="margin-bottom:12px"/>
+    <button class="btn btn-p" style="width:100%" onclick="addHol();this.closest('.overlay').remove()">Adicionar</button>`;
+  d.appendChild(m);document.body.appendChild(d);
+}
+function openCancelModal(subId){
+  const s=sem();
+  const sub=(s.subjects||[]).find(x=>x.id===subId);
+  if(!sub)return;
+  const d=document.createElement('div');
+  d.className='overlay';d.onclick=e=>{if(e.target===d)d.remove();};
+  const m=document.createElement('div');m.className='modal';m.style.maxWidth='320px';m.onclick=e=>e.stopPropagation();
+  m.innerHTML=`<div class="mhead"><span class="mtitle">Cancelar aula — ${esc(sub.name)}</span><button onclick="this.closest('.overlay').remove()" style="background:none;border:none;font-size:22px;cursor:pointer;color:var(--t3)">×</button></div>
+    <div style="font-size:12px;color:var(--t2);margin-bottom:10px">Marque a data em que não haverá aula. Ela não será contabilizada no total.</div>
+    <label class="lbl">Data</label>
+    <input class="inp" type="date" id="cancel-date-modal" style="margin-bottom:12px"/>
+    <input type="hidden" id="cancel-sub-modal" value="${subId}"/>
+    <button class="btn btn-p" style="width:100%" onclick="addCancellationModal();this.closest('.overlay').remove()">Marcar como cancelada *</button>`;
+  d.appendChild(m);document.body.appendChild(d);
+}
+function addCancellationModal(){
+  const subId=document.getElementById('cancel-sub-modal')?.value;
+  const date=document.getElementById('cancel-date-modal')?.value;
+  if(!subId||!date)return;
+  updSem(s=>{const c={...s.cancellations||{}};c[subId]=[...new Set([...(c[subId]||[]),date])];return{...s,cancellations:c};});
+  rMain();
+}
 function addHol(){const v=document.getElementById('fl-h')?.value;if(!v)return;updSem(s=>({...s,holidays:[...new Set([...(s.holidays||[]),v])]}));}
 function rmHol(d){updSem(s=>({...s,holidays:s.holidays.filter(h=>h!==d)}));}
+function addCancellation(){
+  const subId=document.getElementById('cancel-sub')?.value;
+  const date=document.getElementById('cancel-date')?.value;
+  if(!subId||!date)return alert('Selecione a matéria e a data.');
+  updSem(s=>{
+    const c={...s.cancellations||{}};
+    c[subId]=[...new Set([...(c[subId]||[]),date])];
+    return{...s,cancellations:c};
+  });
+  rMain();
+}
+function rmCancellation(subId,date){
+  updSem(s=>{
+    const c={...s.cancellations||{}};
+    c[subId]=(c[subId]||[]).filter(d=>d!==date);
+    return{...s,cancellations:c};
+  });
+  rMain();
+}
+function toggleAbs(subId, date, blocked, el){
+  if(blocked) return;
+  const s=sem();
+  const att=JSON.parse(JSON.stringify(s.attendance||{}));
+  if(!att[subId]) att[subId]={};
+  const wasAbs=!!att[subId][date];
+  if(wasAbs) delete att[subId][date];
+  else att[subId][date]=true;
+  updSem(s=>({...s,attendance:att}));
+
+  // Update only the clicked day cell — no full re-render
+  const isPast=date<=TODAY;
+  const isToday=date===TODAY;
+  const isNowAbs=!wasAbs;
+  let bg,color,border='transparent';
+  if(isNowAbs&&isPast){bg='var(--erb)';color='var(--er)';border='var(--er)';}
+  else if(!isNowAbs&&isPast&&!isToday){bg='var(--okb)';color='var(--ok)';}
+  else if(isToday){bg='var(--p6)';color='#fff';}
+  else{bg='var(--n1)';color='var(--t3)';}
+  if(el){
+    el.style.background=bg;
+    el.style.color=color;
+    el.style.borderColor=border;
+    el.style.transform='scale(1.2)';
+    setTimeout(()=>el.style.transform='',180);
+  }
+
+  // Update only the stats badge and progress bar for this subject
+  const newAtt=att[subId]||{};
+  const subCard=el?.closest('.abs-card');
+  if(!subCard) return;
+
+  const newS=sem();
+  const sub=(newS.subjects||[]).find(x=>x.id===subId);
+  if(!sub) return;
+  const st=absStatsV2(sub,newS);
+  const pct=st.realTotal>0?Math.round((st.used/st.realTotal)*100):0;
+  const danger=st.rem<=1, warn=st.rem<=2&&st.rem>1;
+
+  // Update badge
+  const badge=subCard.querySelector('.abs-badge');
+  if(badge){
+    badge.textContent=st.used+' falta'+(st.used!==1?'s':'')+' · '+st.rem+' restante'+(st.rem!==1?'s':'')+' de '+st.max+' permitida'+(st.max!==1?'s':'');
+    badge.style.color=danger?'var(--er)':warn?'var(--wa)':'var(--ok)';
+    badge.style.background=danger?'var(--erb)':warn?'var(--wab)':'var(--okb)';
+  }
+
+  // Update progress bar
+  const bar=subCard.querySelector('.abs-bar');
+  if(bar){
+    bar.style.width=Math.min(100,pct)+'%';
+    bar.style.background=danger?'var(--er)':warn?'#E09000':'var(--ok)';
+  }
+
+  // Update card border
+  if(danger) subCard.style.borderLeft='3px solid var(--er)';
+  else subCard.style.borderLeft='';
+}
+
+function loadBrHolidays(){
+  const h2026=['2026-01-01','2026-02-16','2026-02-17','2026-04-03','2026-04-21',
+    '2026-05-01','2026-06-04','2026-07-09','2026-09-07','2026-10-12',
+    '2026-11-02','2026-11-15','2026-11-20','2026-12-25'];
+  updSem(s=>({...s,holidays:[...new Set([...(s.holidays||[]),...h2026])]}));
+  rMain();
+}
+
 function togAbs(sid,date){updSem(s=>{const att={...(s.attendance||{})};att[sid]={...(att[sid]||{}),[date]:!att[sid]?.[date]};return{...s,attendance:att};});}
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -561,7 +992,15 @@ function togAbs(sid,date){updSem(s=>{const att={...(s.attendance||{})};att[sid]=
 // ═══════════════════════════════════════════════════════════════════════════════
 function rNotas(){
   const s=sem();
-  return`<h2 class="stitle">Controle de notas</h2>
+  return`  <div style="position:relative;margin:-24px -26px 24px;padding:32px 40px 28px;background:linear-gradient(135deg,var(--p8) 0%,var(--p6) 60%,var(--p5) 100%);overflow:hidden">
+    <div style="position:absolute;bottom:-20px;right:-10px;font-family:'Playfair Display',serif;font-size:100px;font-weight:700;color:#fff;opacity:.04;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.02em">notas</div>
+    <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;border:1px solid #fff;opacity:.07;pointer-events:none"></div>
+    <div style="position:relative;z-index:2;animation:fadeUp .3s ease both">
+      <div style="font-family:'Outfit',sans-serif;font-size:9px;font-weight:400;color:var(--r2);letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px;opacity:.7">Acompanhe seu desempenho</div>
+      <div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#fff;line-height:1.1">Notas</div>
+    </div>
+  </div>
+  
   ${!s.subjects?.length?`<div class="empty">Cadastre matérias para gerenciar as notas.</div>`:
   s.subjects.map(sub=>{
     const cfgs=s.gradeConfigs?.[sub.id]||[],vals=s.gradeValues?.[sub.id]||{};
@@ -577,7 +1016,7 @@ function rNotas(){
       </div>
       ${!cfgs.length?`<p style="font-size:12px;color:var(--t3)">Clique em "Configurar" para definir provas, trabalhos e pesos.</p>`:''}
       ${cfgs.length?`<div style="display:flex;flex-wrap:wrap;gap:8px">${cfgs.map(c=>{const v=vals[c.id]??'';return`<div class="gwrap"><div style="font-size:10px;color:var(--t3);margin-bottom:5px">${esc(c.name)}<span style="opacity:.6"> (peso ${c.weight})</span></div>
-        <input type="number" min="0" max="10" step="0.1" value="${esc(v)}" placeholder="—" oninput="updGV('${sub.id}','${c.id}',this.value)" style="background:transparent;border:none;border-bottom:2px solid var(--p2);color:var(--p8);width:100%;font-size:21px;font-weight:700;text-align:center;outline:none;padding:3px 0;font-family:'Jost',sans-serif" onfocus="this.style.borderBottomColor='var(--p5)'" onblur="this.style.borderBottomColor='var(--p2)'"/></div>`;}).join('')}</div>`:''}
+        <input type="number" min="0" max="10" step="0.1" value="${esc(v)}" placeholder="—" oninput="updGV('${sub.id}','${c.id}',this.value)" style="background:transparent;border:none;border-bottom:2px solid var(--p2);color:var(--p8);width:100%;font-size:21px;font-weight:700;text-align:center;outline:none;padding:3px 0;font-family:'Outfit',sans-serif" onfocus="this.style.borderBottomColor='var(--p5)'" onblur="this.style.borderBottomColor='var(--p2)'"/></div>`;}).join('')}</div>`:''}
     </div>`;
   }).join('')}`;
 }
@@ -620,49 +1059,205 @@ function saveGC(){const valid=window.gcC.filter(c=>String(c.name).trim());updSem
 // ═══════════════════════════════════════════════════════════════════════════════
 // RESUMOS — editor rico tipo Docs
 // ═══════════════════════════════════════════════════════════════════════════════
-let _docId=null,_docTimer=null,_htmlDocId=null;
+let _docId=null,_docTimer=null,_htmlDocId=null,_folderOpen=null;
 function rResumos(){
   const s=sem(),docs=s.docs||[],htmlDocs=s.htmlDocs||[];
   if(_docId&&docs.find(d=>d.id===_docId))return rDocEditor(s,docs);
   if(_htmlDocId&&htmlDocs.find(d=>d.id===_htmlDocId))return rHtmlViewer(s,htmlDocs);
-  return`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px">
-    <h2 class="stitle" style="margin:0">Resumos e documentos</h2>
-    <div style="display:flex;gap:6px;align-items:center">
-      <button class="btn btn-o btn-sm" onclick="importFromClaude()" title="Importar resumo JSON do Claude" style="color:var(--p6);border-color:var(--p2)">⬆ Importar do Claude</button>
-      <button class="btn btn-o btn-sm" onclick="importHtmlDoc()" title="Importar página HTML interativa" style="color:var(--n7);border-color:var(--n3)">✦ Importar HTML</button>
-      <button class="btn btn-p" onclick="newDoc()">+ Novo resumo</button>
+  if(_folderOpen)return rFolderView(s,docs,htmlDocs);
+  return rFolderList(s,docs,htmlDocs);
+}
+
+function rFolderList(s,docs,htmlDocs){
+  const subjects=s.subjects||[];
+  const allDocs=[...docs.map(d=>({...d,_type:'doc'})),...(htmlDocs).map(d=>({...d,_type:'html'}))];
+
+  // Build folders: one per subject + Geral
+  const folders=[
+    ...subjects.map(sub=>({
+      id:sub.id,
+      name:sub.name,
+      color:sub.color,
+      count:allDocs.filter(d=>d.subjectId===sub.id).length,
+      isSubject:true
+    })),
+    {
+      id:'geral',
+      name:'Geral',
+      color:'var(--n4)',
+      count:allDocs.filter(d=>!d.subjectId||!subjects.find(x=>x.id===d.subjectId)).length,
+      isSubject:false
+    }
+  ];
+
+  return`
+  <div style="position:relative;margin:-24px -26px 24px;padding:32px 40px 28px;background:linear-gradient(135deg,var(--p8) 0%,var(--p6) 60%,var(--p5) 100%);overflow:hidden">
+    <div style="position:absolute;bottom:-20px;right:-10px;font-family:'Playfair Display',serif;font-size:100px;font-weight:700;color:#fff;opacity:.04;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.02em">resumos</div>
+    <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;border:1px solid #fff;opacity:.07;pointer-events:none"></div>
+    <div style="position:relative;z-index:2;animation:fadeUp .3s ease both">
+      <div style="font-family:'Outfit',sans-serif;font-size:9px;color:var(--r2);letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px;opacity:.7">Documentos e materiais</div>
+      <div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#fff;line-height:1.1">Resumos</div>
     </div>
   </div>
-  ${!docs.length?`<div class="empty" style="padding:32px">
-    <div style="font-size:28px;margin-bottom:8px">📄</div>
-    <div style="font-size:14px;font-weight:700;color:var(--p8);margin-bottom:4px">Nenhum resumo ainda</div>
-    <div style="font-size:12px;margin-bottom:4px;color:var(--t3)">Crie documentos aqui ou peça ao Claude para gerar um resumo e importe com o botão acima</div>
-    <div style="font-size:11px;color:var(--p4);margin-bottom:14px;background:var(--p0);border-radius:7px;padding:7px 12px;display:inline-block">💡 Dica: diga ao Claude "crie um resumo sobre [tema]" e importe o arquivo gerado</div><br/>
-    <button class="btn btn-p" onclick="newDoc()">+ Criar primeiro resumo</button>
-  </div>`:
-  `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:10px">
-    ${(s.htmlDocs||[]).map(d=>{const sub=(s.subjects||[]).find(x=>x.id===d.subjectId);
-    return`<div onclick="_htmlDocId='${d.id}';rMain()" style="background:var(--sur);border:1px solid var(--bdl);${sub?'border-top:3px solid '+sub.color+';':'border-top:3px solid var(--p4);'} border-radius:10px;padding:14px;cursor:pointer;transition:all .15s;position:relative" onmouseover="this.style.boxShadow='0 4px 14px rgba(96,48,168,.12)';this.style.borderColor='var(--p3)'" onmouseout="this.style.boxShadow='';this.style.borderColor='var(--bdl)'">
-      <span style="position:absolute;top:9px;right:30px;font-size:9px;background:var(--p0);color:var(--p5);border:1px solid var(--p2);border-radius:99px;padding:1px 6px;font-weight:600">HTML</span>
-      <button onclick="event.stopPropagation();delHtmlDoc('${d.id}')" style="position:absolute;top:8px;right:8px;background:none;border:none;color:var(--t3);cursor:pointer;font-size:13px;padding:2px 5px;border-radius:4px" title="Deletar">✕</button>
-      <div style="font-size:22px;margin-bottom:7px">✦</div>
-      <div style="font-size:13px;font-weight:700;color:var(--p8);margin-bottom:4px;line-height:1.3;padding-right:14px">${esc(d.title||'Sem título')}</div>
-      ${sub?`<span class="pill" style="background:${sub.color}14;color:${sub.color};display:inline-block;margin-bottom:5px">${esc(sub.name)}</span>`:''}
-      <div style="font-size:11px;color:var(--t3);line-height:1.5;min-height:36px">Resumo interativo com flashcards e tabelas</div>
-      <div style="font-size:10px;color:var(--t3);margin-top:8px;padding-top:6px;border-top:1px solid var(--bdl)">${d.updatedAt?'Importado: '+fmtF(d.updatedAt.slice(0,10)):''}</div>
-    </div>`;}).join('')}
-    ${docs.map(d=>{const sub=(s.subjects||[]).find(x=>x.id===d.subjectId);const preview=d.content?d.content.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().slice(0,95):'';
-    return`<div onclick="_docId='${d.id}';rMain()" style="background:var(--sur);border:1px solid var(--bdl);${sub?'border-top:3px solid '+sub.color+';':''} border-radius:10px;padding:14px;cursor:pointer;transition:all .15s;position:relative" onmouseover="this.style.boxShadow='0 4px 14px rgba(96,48,168,.12)';this.style.borderColor='var(--p3)'" onmouseout="this.style.boxShadow='';this.style.borderColor='var(--bdl)'">
-      ${d.fromClaude?`<span style="position:absolute;top:9px;right:30px;font-size:9px;background:var(--p0);color:var(--p5);border:1px solid var(--p2);border-radius:99px;padding:1px 6px;font-weight:600">Claude</span>`:''}
-      <button onclick="event.stopPropagation();delDoc('${d.id}')" style="position:absolute;top:8px;right:8px;background:none;border:none;color:var(--t3);cursor:pointer;font-size:13px;padding:2px 5px;border-radius:4px" title="Deletar">✕</button>
-      <div style="font-size:20px;margin-bottom:7px">📄</div>
-      <div style="font-size:13px;font-weight:700;color:var(--p8);margin-bottom:4px;line-height:1.3;padding-right:14px">${esc(d.title||'Sem título')}</div>
-      ${sub?`<span class="pill" style="background:${sub.color}14;color:${sub.color};display:inline-block;margin-bottom:5px">${esc(sub.name)}</span>`:``}
-      <div style="font-size:11px;color:var(--t3);line-height:1.5;min-height:36px">${preview?esc(preview):'<em>Documento vazio</em>'}</div>
-      <div style="font-size:10px;color:var(--t3);margin-top:8px;padding-top:6px;border-top:1px solid var(--bdl)">${d.updatedAt?'Editado: '+fmtF(d.updatedAt.slice(0,10)):''}</div>
-    </div>`;}).join('')}
-  </div>`}`;
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;animation:fadeUp .35s ease .1s both">
+    ${folders.map(f=>`
+      <div onclick="_folderOpen='${f.id}';rMain()"
+        style="background:var(--sur);border:1px solid var(--bdl);border-top:3px solid ${f.color};border-radius:8px;padding:16px;cursor:pointer;transition:all .18s ease;position:relative"
+        onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 20px rgba(139,30,56,.12)';this.style.borderColor='var(--r3)'"
+        onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='var(--bdl)'">
+        <div style="font-size:22px;margin-bottom:8px">📁</div>
+        <div style="font-size:13px;font-weight:600;color:var(--n8);margin-bottom:4px;line-height:1.3">${esc(f.name)}</div>
+        <div style="font-size:11px;color:var(--t3)">${f.count} documento${f.count!==1?'s':''}</div>
+      </div>
+    `).join('')}
+  </div>`;
 }
+
+function rFolderView(s,docs,htmlDocs){
+  const subjects=s.subjects||[];
+  const folderId=_folderOpen;
+  const isGeral=folderId==='geral';
+  const subject=subjects.find(x=>x.id===folderId);
+  const folderName=isGeral?'Geral':(subject?.name||'Pasta');
+  const folderColor=isGeral?'var(--n4)':(subject?.color||'var(--p4)');
+
+  const folderDocs=docs.filter(d=>isGeral
+    ?(!d.subjectId||!subjects.find(x=>x.id===d.subjectId))
+    :d.subjectId===folderId
+  );
+  const folderHtml=htmlDocs.filter(d=>isGeral
+    ?(!d.subjectId||!subjects.find(x=>x.id===d.subjectId))
+    :d.subjectId===folderId
+  );
+  const allEmpty=!folderDocs.length&&!folderHtml.length;
+
+  // Other folders for drag targets
+  const otherFolders=[
+    ...subjects.filter(x=>x.id!==folderId).map(x=>({id:x.id,name:x.name,color:x.color})),
+    ...(!isGeral?[{id:'geral',name:'Geral',color:'var(--n4)'}]:[])
+  ];
+
+  return`
+  <div style="position:relative;margin:-24px -26px 24px;padding:32px 40px 28px;background:linear-gradient(135deg,var(--p8) 0%,var(--p6) 60%,var(--p5) 100%);overflow:hidden">
+    <div style="position:absolute;bottom:-20px;right:-10px;font-family:'Playfair Display',serif;font-size:100px;font-weight:700;color:#fff;opacity:.04;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.02em">${folderName.toLowerCase()}</div>
+    <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;border:1px solid #fff;opacity:.07;pointer-events:none"></div>
+    <div style="position:relative;z-index:2;animation:fadeUp .3s ease both;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:10px">
+      <div>
+        <button onclick="_folderOpen=null;rMain()" style="background:none;border:none;color:var(--r2);font-size:11px;letter-spacing:.08em;cursor:pointer;font-family:'Outfit',sans-serif;padding:0;margin-bottom:8px;opacity:.7">← Resumos</button>
+        <div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#fff;line-height:1.1">${esc(folderName)}</div>
+      </div>
+      <div style="display:flex;gap:6px;align-items:center;padding-top:8px;flex-wrap:wrap">
+        <button class="btn btn-o btn-sm" onclick="importFromClaude('${folderId}')" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.25);color:#fff;font-size:11px">⬆ Importar JSON</button>
+        <button class="btn btn-o btn-sm" onclick="importHtmlDoc('${folderId}')" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.25);color:#fff;font-size:11px">✦ Importar HTML</button>
+        <button class="btn btn-p btn-sm" onclick="newDoc('${folderId}')" style="background:#fff;color:var(--p6);font-size:11px">+ Novo resumo</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:14px;align-items:flex-start">
+    <!-- DOCS AREA -->
+    <div style="flex:1;min-width:0">
+      ${allEmpty?`
+      <div class="empty" style="padding:40px;text-align:center;animation:fadeUp .3s ease .1s both">
+        <div style="font-size:32px;margin-bottom:10px">📄</div>
+        <div style="font-size:14px;font-weight:600;color:var(--p6);margin-bottom:4px;font-family:'Playfair Display',serif">Pasta vazia</div>
+        <div style="font-size:12px;color:var(--t3);margin-bottom:16px">Crie um resumo ou importe um arquivo do Claude</div>
+        <button class="btn btn-p" onclick="newDoc('${folderId}')">+ Criar primeiro resumo</button>
+      </div>`:`
+      <div id="docs-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;animation:fadeUp .3s ease .1s both">
+        ${folderHtml.map(d=>`
+          <div class="doc-card" draggable="true"
+            data-id="${d.id}" data-type="html"
+            onclick="_htmlDocId='${d.id}';rMain()"
+            style="background:var(--sur);border:1px solid var(--bdl);border-top:3px solid ${folderColor};border-radius:8px;padding:14px;cursor:grab;transition:all .18s ease;position:relative;user-select:none"
+            onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(139,30,56,.10)'"
+            onmouseout="this.style.transform='';this.style.boxShadow=''">
+            <div style="position:absolute;top:8px;right:8px;display:flex;gap:3px">
+              <span style="font-size:9px;background:var(--r0);color:var(--p6);border:1px solid var(--r2);border-radius:2px;padding:1px 5px;font-weight:600">HTML</span>
+              <button onclick="event.stopPropagation();delHtmlDoc('${d.id}')" style="background:none;border:none;color:var(--t3);cursor:pointer;font-size:12px;padding:1px 4px;border-radius:3px;line-height:1">✕</button>
+            </div>
+            <div style="font-size:18px;margin-bottom:8px;margin-top:4px">✦</div>
+            <div style="font-size:13px;font-weight:600;color:var(--n8);margin-bottom:4px;line-height:1.3;padding-right:10px">${esc(d.title||'Sem título')}</div>
+            <div style="font-size:11px;color:var(--t3)">Resumo interativo</div>
+            <div style="font-size:10px;color:var(--t3);margin-top:8px;padding-top:6px;border-top:1px solid var(--bdl)">${d.updatedAt?fmtF(d.updatedAt.slice(0,10)):''}</div>
+            <div style="position:absolute;bottom:8px;right:8px;font-size:10px;color:var(--n4);opacity:.5">⠿</div>
+          </div>
+        `).join('')}
+        ${folderDocs.map(d=>{const preview=d.content?d.content.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().slice(0,70):'';
+        return`
+          <div class="doc-card" draggable="true"
+            data-id="${d.id}" data-type="doc"
+            onclick="_docId='${d.id}';rMain()"
+            style="background:var(--sur);border:1px solid var(--bdl);border-top:3px solid ${folderColor};border-radius:8px;padding:14px;cursor:grab;transition:all .18s ease;position:relative;user-select:none"
+            onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(139,30,56,.10)'"
+            onmouseout="this.style.transform='';this.style.boxShadow=''">
+            ${d.fromClaude?`<span style="position:absolute;top:8px;right:24px;font-size:9px;background:var(--r0);color:var(--p6);border:1px solid var(--r2);border-radius:2px;padding:1px 5px;font-weight:600">Claude</span>`:''}
+            <button onclick="event.stopPropagation();delDoc('${d.id}')" style="position:absolute;top:8px;right:8px;background:none;border:none;color:var(--t3);cursor:pointer;font-size:12px;padding:1px 4px;border-radius:3px;line-height:1">✕</button>
+            <div style="font-size:18px;margin-bottom:8px">📄</div>
+            <div style="font-size:13px;font-weight:600;color:var(--n8);margin-bottom:4px;line-height:1.3;padding-right:10px">${esc(d.title||'Sem título')}</div>
+            <div style="font-size:11px;color:var(--t3);line-height:1.5;min-height:28px">${preview?esc(preview):'<em>Documento vazio</em>'}</div>
+            <div style="font-size:10px;color:var(--t3);margin-top:8px;padding-top:6px;border-top:1px solid var(--bdl)">${d.updatedAt?fmtF(d.updatedAt.slice(0,10)):''}</div>
+            <div style="position:absolute;bottom:8px;right:8px;font-size:10px;color:var(--n4);opacity:.5">⠿</div>
+          </div>
+        `;}).join('')}
+      </div>`}
+    </div>
+
+    <!-- DROP ZONES SIDEBAR (só aparece quando tem outras pastas) -->
+    ${otherFolders.length?`
+    <div id="drop-sidebar" style="width:130px;flex-shrink:0;animation:fadeUp .35s ease .15s both">
+      <div style="font-size:9px;font-weight:600;color:var(--t3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px">Mover para</div>
+      ${otherFolders.map(f=>`
+        <div class="drop-zone" data-folder-id="${f.id}"
+          style="border:1.5px dashed var(--n3);border-radius:8px;padding:10px 8px;text-align:center;margin-bottom:6px;transition:all .18s ease;cursor:default;background:var(--sur)"
+          ondragover="event.preventDefault();this.style.borderColor='var(--p5)';this.style.background='var(--p0)';this.style.transform='scale(1.03)'"
+          ondragleave="this.style.borderColor='var(--n3)';this.style.background='var(--sur)';this.style.transform=''"
+          ondrop="handleDocDrop(event,'${f.id}')">
+          <div style="font-size:18px;margin-bottom:4px">📁</div>
+          <div style="font-size:11px;font-weight:500;color:var(--t2);line-height:1.3">${esc(f.name)}</div>
+          <div style="width:16px;height:3px;border-radius:2px;background:${f.color};margin:5px auto 0"></div>
+        </div>
+      `).join('')}
+    </div>`:''}
+  </div>
+
+`;
+  setTimeout(initFolderDnd, 30);
+}
+
+
+function handleDocDrop(e,targetFolderId){
+  e.preventDefault();
+  const docId=e.dataTransfer.getData('docId');
+  const docType=e.dataTransfer.getData('docType');
+  if(!docId)return;
+  confirmMove(docId,docType,targetFolderId);
+}
+
+function initFolderDnd(){
+  document.querySelectorAll('.doc-card').forEach(card=>{
+    card.addEventListener('dragstart',e=>{
+      e.dataTransfer.setData('docId',card.dataset.id);
+      e.dataTransfer.setData('docType',card.dataset.type);
+      card.style.opacity='.4';
+      card.style.transform='scale(.97)';
+      card.style.cursor='grabbing';
+    });
+    card.addEventListener('dragend',()=>{
+      card.style.opacity='';
+      card.style.transform='';
+      card.style.cursor='grab';
+      document.querySelectorAll('.drop-zone').forEach(z=>{
+        z.style.borderColor='var(--n3)';
+        z.style.background='var(--sur)';
+        z.style.transform='';
+      });
+    });
+  });
+}
+
+
 function rDocEditor(s,docs){
   const doc=docs.find(d=>d.id===_docId);
   if(!doc){_docId=null;return rResumos();}
@@ -674,7 +1269,7 @@ function rDocEditor(s,docs){
   return`<div style="display:flex;align-items:center;gap:9px;margin-bottom:10px;flex-wrap:wrap">
     <button class="btn btn-o btn-sm" onclick="saveDoc();_docId=null;rMain()">← Voltar</button>
     <input id="doc-ti" value="${esc(doc.title||'')}" placeholder="Título do resumo..." oninput="schedDoc()"
-      style="flex:1;min-width:130px;font-size:16px;font-weight:700;border:none;border-bottom:2px solid var(--p1);background:transparent;outline:none;color:var(--p8);font-family:'Jost',sans-serif;padding:2px 0;transition:border-color .18s"
+      style="flex:1;min-width:130px;font-size:16px;font-weight:700;border:none;border-bottom:2px solid var(--p1);background:transparent;outline:none;color:var(--p8);font-family:'Outfit',sans-serif;padding:2px 0;transition:border-color .18s"
       onfocus="this.style.borderBottomColor='var(--p4)'" onblur="this.style.borderBottomColor='var(--p1)'"/>
     <select class="inp" id="doc-su" onchange="schedDoc()" style="width:140px;font-size:12px;padding:5px 7px">
       <option value="">— matéria —</option>${subOpts}
@@ -707,7 +1302,7 @@ function rDocEditor(s,docs){
   </div>`;
 }
 function docFmt(cmd,val){document.getElementById('doc-ce')?.focus();document.execCommand(cmd,false,val||null);schedDoc();}
-function importFromClaude(){
+function importFromClaude(folderId){
   const inp=document.createElement('input');inp.type='file';inp.accept='.json,.acad';
   inp.onchange=ev=>{
     const file=ev.target.files[0];if(!file)return;
@@ -715,30 +1310,101 @@ function importFromClaude(){
     reader.onload=e=>{
       try{
         const data=JSON.parse(e.target.result);
-        if(data.type!=='academico_resumo'){alert('Arquivo inválido. Peça ao Claude para gerar um resumo no formato correto.');return;}
+        if(data.type!=='academico_resumo')return alert('Arquivo inválido. Use um arquivo exportado pelo Claude.');
         const s=sem();
-        // Try to match subject by name
-        let subjectId='';
-        if(data.subject){const found=(s.subjects||[]).find(x=>x.name.toLowerCase()===data.subject.toLowerCase());if(found)subjectId=found.id;}
-        const doc={
-          id:uid(),
-          title:data.title||'Resumo importado',
-          content:data.content||'',
-          subjectId,
-          fromClaude:true,
-          updatedAt:new Date().toISOString()
-        };
+        const subjectId=folderId&&folderId!=='geral'?folderId:(s.subjects||[]).find(x=>x.name===data.subject)?.id||'';
+        const doc={id:uid(),title:data.title||'Resumo',content:data.content||'',subjectId,fromClaude:true,updatedAt:new Date().toISOString()};
         updSem(s=>({...s,docs:[...(s.docs||[]),doc]}));
         _docId=doc.id;rMain();
-      }catch(err){alert('Erro ao ler o arquivo: '+err.message);}
+      }catch{alert('Erro ao ler o arquivo.');}
     };
     reader.readAsText(file);
   };
   inp.click();
 }
-function newDoc(){
-  const doc={id:uid(),title:'',content:'',subjectId:'',updatedAt:new Date().toISOString()};
+
+function newDoc(folderId){
+  const subjectId=folderId&&folderId!=='geral'?folderId:'';
+  const doc={id:uid(),title:'',content:'',subjectId,updatedAt:new Date().toISOString()};
   updSem(s=>({...s,docs:[...(s.docs||[]),doc]}));_docId=doc.id;rMain();
+}
+function moveDoc(docId, type){
+  const s=sem();
+  const subjects=s.subjects||[];
+  const opts=[{id:'geral',name:'Geral'},...subjects.map(x=>({id:x.id,name:x.name}))];
+  const current=type==='html'
+    ?(s.htmlDocs||[]).find(d=>d.id===docId)
+    :(s.docs||[]).find(d=>d.id===docId);
+  const currentFolder=current?.subjectId||'geral';
+
+  // Build modal entirely with DOM (no template literals)
+  const overlay=document.createElement('div');
+  overlay.className='overlay';
+  overlay.onclick=e=>{if(e.target===overlay)overlay.remove();};
+
+  const modal=document.createElement('div');
+  modal.className='modal';
+  modal.style.maxWidth='340px';
+  modal.onclick=e=>e.stopPropagation();
+
+  const head=document.createElement('div');
+  head.className='mhead';
+  head.innerHTML='<span class="mtitle">Mover documento</span>';
+  const closeBtn=document.createElement('button');
+  closeBtn.innerHTML='&times;';
+  closeBtn.style.cssText='background:none;border:none;font-size:22px;cursor:pointer;color:var(--t3);line-height:1';
+  closeBtn.onclick=()=>overlay.remove();
+  head.appendChild(closeBtn);
+
+  const sub=document.createElement('div');
+  sub.style.cssText='font-size:12px;color:var(--t2);margin-bottom:12px';
+  sub.textContent='Escolha a pasta de destino:';
+
+  const list=document.createElement('div');
+  opts.forEach(o=>{
+    const isCurrent=o.id===currentFolder;
+    const btn=document.createElement('button');
+    btn.style.cssText='display:flex;align-items:center;gap:10px;padding:10px 13px;border-radius:6px;border:1px solid '+(isCurrent?'var(--p4)':'var(--bdl)')+';background:'+(isCurrent?'var(--p0)':'var(--sur)')+';cursor:pointer;font-family:Outfit,sans-serif;font-size:13px;color:var(--t1);text-align:left;width:100%;margin-bottom:5px;transition:all .15s';
+    btn.onmouseover=()=>{btn.style.background='var(--p0)';btn.style.borderColor='var(--p3)';};
+    btn.onmouseout=()=>{btn.style.background=isCurrent?'var(--p0)':'var(--sur)';btn.style.borderColor=isCurrent?'var(--p4)':'var(--bdl)';};
+    btn.onclick=()=>{confirmMove(docId,type,o.id);overlay.remove();};
+
+    const icon=document.createElement('span');
+    icon.style.fontSize='18px';
+    icon.textContent='📁';
+
+    const label=document.createElement('span');
+    label.style.fontWeight=isCurrent?'600':'400';
+    label.textContent=o.name;
+
+    btn.appendChild(icon);
+    btn.appendChild(label);
+
+    if(isCurrent){
+      const badge=document.createElement('span');
+      badge.style.cssText='margin-left:auto;font-size:10px;color:var(--p5);font-weight:600;background:var(--p1);padding:2px 6px;border-radius:3px';
+      badge.textContent='atual';
+      btn.appendChild(badge);
+    }
+    list.appendChild(btn);
+  });
+
+  modal.appendChild(head);
+  modal.appendChild(sub);
+  modal.appendChild(list);
+  overlay.appendChild(modal);
+  document.body.appendChild(overlay);
+}
+
+function confirmMove(docId,type,targetFolder){
+  const subjectId=targetFolder==='geral'?'':targetFolder;
+  if(type==='html'){
+    updSem(s=>({...s,htmlDocs:(s.htmlDocs||[]).map(d=>d.id===docId?{...d,subjectId}:d)}));
+  } else {
+    updSem(s=>({...s,docs:(s.docs||[]).map(d=>d.id===docId?{...d,subjectId}:d)}));
+  }
+  document.querySelector('.overlay')?.remove();
+  rMain();
 }
 function delDoc(id){if(!confirm('Deletar este resumo?'))return;if(_docId===id)_docId=null;updSem(s=>({...s,docs:(s.docs||[]).filter(d=>d.id!==id)}));}
 function schedDoc(){
@@ -771,7 +1437,7 @@ function rHtmlViewer(s,htmlDocs){
   </div>
   <iframe id="html-frame" style="width:100%;height:calc(100vh - 130px);border:1px solid var(--bdl);border-radius:10px;background:#fff" sandbox="allow-scripts allow-same-origin"></iframe>`;
 }
-function importHtmlDoc(){
+function importHtmlDoc(folderId){
   const inp=document.createElement('input');inp.type='file';inp.accept='.html,.htm';
   inp.onchange=ev=>{
     const file=ev.target.files[0];if(!file)return;
@@ -782,9 +1448,7 @@ function importHtmlDoc(){
       const h1Match=htmlContent.match(/<h1[^>]*>([^<]+)<\/h1>/i);
       const title=(titleMatch?.[1]||h1Match?.[1]||file.name.replace('.html','')).trim();
       const s=sem();
-      let subjectId='';
-      const subMatch=(s.subjects||[]).find(x=>title.toLowerCase().includes(x.name.toLowerCase()));
-      if(subMatch)subjectId=subMatch.id;
+      const subjectId=folderId&&folderId!=='geral'?folderId:'';
       const doc={id:uid(),title,htmlContent,subjectId,updatedAt:new Date().toISOString()};
       updSem(s=>({...s,htmlDocs:[...(s.htmlDocs||[]),doc]}));
       _htmlDocId=doc.id;rMain();
@@ -820,8 +1484,8 @@ function rCaderno(){
   setTimeout(()=>initCvs(s,page),40);
   const COLS=['#2E1065','#6030A8','#9A6238','#B83232','#276A47','#0E6B9A','#A85F00','#D4A0D4','#1a1a1a','#FFFFFF'];
   const SIZES=[2,4,7,13,22];
-  return`<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:9px;flex-wrap:wrap;gap:7px">
-    <h2 class="stitle" style="margin:0">Caderno</h2>
+  return`<div style="position:relative;margin:-24px -26px 24px;padding:32px 40px 28px;background:linear-gradient(135deg,var(--p8) 0%,var(--p6) 60%,var(--p5) 100%);overflow:hidden"><div style="position:absolute;bottom:-20px;right:-10px;font-family:'Playfair Display',serif;font-size:100px;font-weight:700;color:#fff;opacity:.04;line-height:1;pointer-events:none;user-select:none;letter-spacing:-.02em">caderno</div><div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;border:1px solid #fff;opacity:.07;pointer-events:none"></div><div style="position:relative;z-index:2;animation:fadeUp .3s ease both"><div style="font-family:'Outfit',sans-serif;font-size:9px;font-weight:400;color:var(--r2);letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px;opacity:.7">Suas anotações</div><div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#fff;line-height:1.1">Caderno</div></div></div><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:9px;flex-wrap:wrap;gap:7px">
+    <h2 class="stitle" style="margin:0" style="display:none">Caderno</h2>
     <div style="display:flex;gap:4px;flex-wrap:wrap;align-items:center">
       ${pages.map((p,i)=>`<button class="btn btn-sm" style="${i===_pi?'background:var(--p6);color:#fff':'background:var(--sur);border:1px solid var(--bd);color:var(--t2)'}" onclick="pgSwitch(${i})">${esc(p.name)}</button>`).join('')}
       <button class="btn btn-sm btn-o" onclick="pgAdd()" style="font-weight:700">+</button>
@@ -996,6 +1660,29 @@ function importData(){
 }
 
 // ── init ──────────────────────────────────────────────────────────────────────
+
+
+// Migrate any purple/violet subject colors to wine palette
+(function migrateColors(){
+  const wineColors=['#8B1E38','#A63050','#C4728A','#6B3A2A','#9A4A1E','#2D5A3D','#1A4A6B','#5A3A6B'];
+  function isViolet(hex){
+    if(!hex||hex[0]!=='#')return false;
+    const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
+    // Purple/violet: blue and red both high, green low
+    return b>100&&r>60&&g<120&&b>r*0.6;
+  }
+  const stored=lsLoad();
+  if(!stored)return;
+  let changed=false;
+  stored.sems.forEach(s=>(s.subjects||[]).forEach((sub,i)=>{
+    if(isViolet(sub.color)){
+      sub.color=wineColors[i%wineColors.length];
+      changed=true;
+    }
+  }));
+  if(changed)lsSave(stored);
+})();
+
 render();
 </script>
 </body>
